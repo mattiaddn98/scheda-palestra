@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Scheda PPL">
+<meta name="theme-color" content="#0c0c0c">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAFIklEQVR4nO3TQW6UMRQEYS7Fqbj/GkQWERKQzGRmXM+/v5Jq/+zu/vYNAAAAALCMnz++/6xvAJ7C7zKvsn4rDmZl0Q0DOXWpDQLLqYtrDFhOXVBjwHLqIk6wzgCLqQs32TobvJC6XDtZZ4UnUpdpZ+vs8AB1ea5knSXuoC7Lla2zxQfU5TjJOmv8QV2Gk62zP566ADSChDp0GkJGHTSNIKEOl4aQUQdKI8iog6QRJNTh0RAy6sBoBBl1UDSCjDogGkFGHQyNIKEOg4aQUQfA3rqDGfXHc451F5dTfzjnWXdyGfVHc651N5dQfzLnWnfz5dQfzPnWHX0Z9cdyH+uuPp36Q7mfdWefRv2R3Ne6uw9TfyD3t+7wQ9Sfx/2tO/xl6o/jday7fDf1h/F61p2+mfqjeF3rbt9E/Um8rnW3P6X+IF7fuuP/pf4YnmPd9X9SfwrPse76X9QfwvOsO/9O/RE817r7b9SfwHOtu6/8zDUAHq3y83gNgEer/L/FOuqs6xHUjzWAmDrrcgD1Qw1gAHXW5QjqRxrAAOqsqwHUDzSAIdRZVyOoH2cAQ6izLgZQP8wABlFnXYygftTDI6hvc+MyDWBycG58uWeWf5fg3LhEA5ganBuXaABTg3PjEs8r/y7BuXGZBjAxODcu0wAmBufGZZ5V/l2Cc+NSDWBacG5cqgFMC86NSz2n/LsE58blGsCk4Ny4XAOYFJwbl2sAk4Jz43LPKP8uwbkx0QDq29yYagD1bW5MNYD6NjemGkB9mxtTDaC+zY2p1y//LsG5MdMAJujGTAOYoBszDWCCbsw0gAm6MdMAJujGTAOYoBszrz0ArKPO2gAMIKXO2gAMIKXO2gAMIKXO2gAMIKXO2gAMIKXO+lUDqA80gE2oszYCA0ips35V+Q0AN1FnbQAGkFJnbQAGkFJnbQAGkFJnbQAGkFJnbQBfGEF9mxtzDWCCbsw0gAm6MdMAJujGTAOYoBszDWCCbsw0gAm6MfOmAWw9gh2Cc2PizeU3ADduceOdGkB9mxtTDaC+zY2pBlDf5sZUA6hvc2PqXQPYdgQ7BOfG5d5dfgNw4/gb79AAJgXnxuUawKTg3LjcLw1gyxHsEJwbl/rl8huAG0ffeKMGMC04Ny71oQFsN4IdgnPjMh8uvwG4ceyNN2gAE4Nz4zKfMoCtRrBDcG5c4tPKbwBuHHnjJxrA1ODcuMSnDmCbEewQnBtf7tPLbwBuHHfjB545AKyjzroYwPgRYB111kX5DQDv1FlXAxg9AqyjzroqvwHgjTrrcgBjR4B11FmX5TcA5FnXAxg7Ah7p8vIbACeZDMAIOMGs/AbACaYDMAKW1t1/o/4Enmvd/Xfqj+B51p3/i/pDeI511/9J/Sk8x7rr/6X+GF7fuuOfUn8Qr2vd7ZuoP4nXte72zdQfxetZd/pu6g/jday7/GXqj+P+1h1+iPrzuL91hx+m/kDua93dp1F/JPez7uzTqT+U+1h39WXUH8v51h19OfUHc651N5dQfzLnWndzGfVHc551J5dTfzjnWHcxo/549tYdzKkDoPKPoA6Dip9TB0Plz6kDovLn1EFR+XPqwKj8I6jDo+Ln1EFS+XPqQKn8I6jDpeLn1EFT+UdQh07Fz6kLcLJ19viDugwnWWeND6jLcWXrbHEHdVmuZJ0lHqAuz87W2eGJ1GXayTorvJC6XJOts8Fi6sJNsM4AQ6iLqPQYQ11QpccY6uIqPUZRl1rhMRJFB+5EmQEAALCYX8HwDaLRREFlAAAAAElFTkSuQmCC">
+
+<title>Scheda PPL — Definizione + Massa + Core</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c0c0c;--bg2:#151515;--bg3:#1e1e1e;--card:#161616;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
+  --text:#ede9e3;--muted:#7a7772;
+  --accent:#ff6b35;--adim:rgba(255,107,53,0.13);--adim2:rgba(255,107,53,0.22);
+  --push-c:#ff6b35;--pull-c:#4db8ff;--legs-c:#7fff6b;--core-c:#d98fff;
+  --push-d:rgba(255,107,53,0.13);--pull-d:rgba(77,184,255,0.13);
+  --legs-d:rgba(127,255,107,0.13);--core-d:rgba(217,143,255,0.13);
+  --radius:14px;--radius-sm:8px;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:100px}
+
+.hdr{background:var(--bg);padding:20px 20px 0;position:sticky;top:0;z-index:100;border-bottom:.5px solid var(--border)}
+.hdr-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px}
+.hdr-eyebrow{font-size:11px;font-weight:500;letter-spacing:.12em;color:var(--accent);text-transform:uppercase;margin-bottom:4px}
+.hdr-title{font-size:22px;font-weight:600;line-height:1.2}
+.hdr-sub{font-size:13px;color:var(--muted);margin-top:3px}
+.badges{display:flex;flex-direction:column;gap:5px;align-items:flex-end}
+.badge{border-radius:20px;padding:3px 10px;font-size:10px;font-weight:600;letter-spacing:.06em;white-space:nowrap;border:.5px solid}
+.badge-fire{background:var(--adim);color:var(--accent);border-color:var(--accent)}
+.badge-core{background:var(--core-d);color:var(--core-c);border-color:var(--core-c)}
+.badge-blue{background:rgba(77,184,255,.13);color:#4db8ff;border-color:#4db8ff}
+
+.prog-wrap{padding:12px 20px 14px}
+.prog-row{display:flex;justify-content:space-between;margin-bottom:7px}
+.prog-lbl{font-size:12px;color:var(--muted)}
+.prog-val{font-family:'DM Mono',monospace;font-size:12px;color:var(--accent)}
+.bar-bg{background:var(--bg3);border-radius:4px;height:4px;overflow:hidden}
+.bar-fill{background:var(--accent);height:100%;border-radius:4px;transition:width .5s ease}
+
+.week-nav{display:flex;gap:7px;padding:0 20px 15px;overflow-x:auto;scrollbar-width:none}
+.week-nav::-webkit-scrollbar{display:none}
+.wbtn{background:var(--bg3);border:.5px solid var(--border);border-radius:var(--radius-sm);color:var(--muted);font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;padding:7px 14px;cursor:pointer;white-space:nowrap;transition:all .18s;flex-shrink:0}
+.wbtn.active{background:var(--adim2);border-color:var(--accent);color:var(--accent)}
+
+.stats-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;padding:0 16px 14px}
+.stat-c{background:var(--card);border:.5px solid var(--border);border-radius:var(--radius-sm);padding:11px;text-align:center}
+.stat-v{font-family:'DM Mono',monospace;font-size:19px;font-weight:500;color:var(--accent);line-height:1;margin-bottom:3px}
+.stat-l{font-size:10px;color:var(--muted);letter-spacing:.04em}
+
+.sec-lbl{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:0 16px 9px}
+
+.tip-box{margin:0 16px 12px;background:var(--core-d);border:.5px solid var(--core-c);border-radius:var(--radius-sm);padding:11px 13px;font-size:12px;color:var(--muted);line-height:1.55}
+.tip-box strong{color:var(--core-c);font-weight:600;display:block;margin-bottom:3px}
+
+.s-card{background:var(--card);border:.5px solid var(--border);border-radius:var(--radius);margin:0 16px 11px;overflow:hidden;transition:border-color .2s}
+.s-card.done{border-color:rgba(255,107,53,.35)}
+.s-head{display:flex;align-items:center;gap:11px;padding:13px 15px;cursor:pointer;user-select:none}
+.s-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;border:.5px solid var(--border2)}
+.s-icon.push{background:var(--push-d)}
+.s-icon.pull{background:var(--pull-d)}
+.s-icon.legs{background:var(--legs-d)}
+.s-info{flex:1;min-width:0}
+.s-day{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:2px}
+.s-name{font-size:15px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.s-meta{font-size:11px;color:var(--muted);margin-top:2px}
+.s-tag{display:inline-block;padding:2px 7px;border-radius:10px;font-size:10px;font-weight:600;border:.5px solid;margin-right:5px}
+.s-tag.push{background:var(--push-d);color:var(--push-c);border-color:var(--push-c)}
+.s-tag.pull{background:var(--pull-d);color:var(--pull-c);border-color:var(--pull-c)}
+.s-tag.legs{background:var(--legs-d);color:var(--legs-c);border-color:var(--legs-c)}
+.chevron{color:var(--muted);font-size:16px;transition:transform .25s;flex-shrink:0}
+.s-card.open .chevron{transform:rotate(180deg)}
+
+.ex-list{display:none;border-top:.5px solid var(--border)}
+.s-card.open .ex-list{display:block}
+
+.core-section-hdr{display:flex;align-items:center;gap:8px;padding:12px 15px 4px;border-top:.5px solid var(--border)}
+.core-dot{width:6px;height:6px;border-radius:50%;background:var(--core-c);flex-shrink:0}
+.core-hdr-txt{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--core-c)}
+
+.ex-item{padding:13px 15px;border-bottom:.5px solid var(--border)}
+.ex-item:last-child{border-bottom:none}
+.ex-item.core-ex{border-left:2px solid var(--core-c)}
+.ex-top{display:flex;align-items:flex-start;gap:9px;margin-bottom:9px}
+.ex-num{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-top:3px;flex-shrink:0;width:16px}
+.ex-info{flex:1;min-width:0}
+.ex-name{font-size:14px;font-weight:600;margin-bottom:3px;line-height:1.3}
+.ex-params{font-size:11px;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px}
+.ex-pill{background:var(--bg3);border-radius:10px;padding:2px 8px;font-size:10px;color:var(--muted)}
+.ex-pill.core{background:var(--core-d);color:var(--core-c)}
+
+.info-btn{background:none;border:.5px solid var(--border2);border-radius:6px;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:10px;padding:4px 8px;cursor:pointer;flex-shrink:0;margin-top:1px;transition:all .15s}
+.info-btn:active{background:var(--bg3)}
+
+/* ── INFO PANEL ── */
+.info-panel{display:none;margin-bottom:12px;border-radius:var(--radius-sm);overflow:hidden;border:.5px solid var(--border2)}
+.info-panel.show{display:block}
+
+.info-imgs{display:flex;gap:2px;background:var(--bg3)}
+.info-img{flex:1;min-width:0;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--bg3)}
+.info-img-placeholder{flex:1;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;background:var(--bg3);flex-direction:column;gap:6px}
+.info-img-placeholder span{font-size:10px;color:var(--muted);text-align:center;padding:0 8px}
+
+.info-yt{display:flex;align-items:center;gap:8px;padding:9px 12px;background:var(--bg3);border-top:.5px solid var(--border);text-decoration:none}
+.info-yt:active{background:var(--bg2)}
+.yt-icon{width:24px;height:24px;background:#ff0000;border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px}
+.yt-txt{font-size:12px;color:var(--muted)}
+.yt-arr{margin-left:auto;font-size:12px;color:var(--muted)}
+
+.info-note{padding:10px 12px;background:var(--bg2);font-size:12px;color:var(--muted);line-height:1.55;border-top:.5px solid var(--border)}
+.info-note.core-note{border-left:2px solid var(--core-c)}
+.info-note strong{color:var(--text);font-weight:500}
+.info-note em{color:#ff8c5a;font-style:normal;font-weight:500}
+
+/* ── SERIE TRACKER ── */
+.series-row{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:4px}
+.sb{width:36px;height:36px;border-radius:50%;background:var(--bg3);border:1.5px solid var(--border2);color:var(--muted);font-family:'DM Mono',monospace;font-size:12px;font-weight:500;cursor:pointer;transition:all .18s;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sb.done{background:var(--adim2);border-color:var(--accent);color:var(--accent)}
+.sb.core-sb.done{background:var(--core-d);border-color:var(--core-c);color:var(--core-c)}
+.rest-btn{background:none;border:.5px solid var(--border2);border-radius:20px;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:11px;padding:5px 12px;cursor:pointer;transition:background .15s;margin-left:3px}
+.rest-btn:active{background:var(--bg3)}
+
+/* ── LOG PESI ── */
+.log-toggle{background:none;border:.5px solid var(--border2);border-radius:6px;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:10px;padding:4px 9px;cursor:pointer;margin-left:4px;transition:all .15s;flex-shrink:0}
+.log-toggle.active{border-color:var(--accent);color:var(--accent);background:var(--adim)}
+.log-toggle:active{background:var(--bg3)}
+
+.log-panel{display:none;margin-top:10px;background:var(--bg3);border-radius:var(--radius-sm);overflow:hidden;border:.5px solid var(--border2)}
+.log-panel.show{display:block}
+.log-header{display:grid;grid-template-columns:32px 1fr 1fr 1.5fr;gap:6px;padding:7px 10px;border-bottom:.5px solid var(--border);background:var(--bg2)}
+.log-header span{font-size:10px;color:var(--muted);font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.log-row{display:grid;grid-template-columns:32px 1fr 1fr 1.5fr;gap:6px;padding:6px 10px;border-bottom:.5px solid var(--border);align-items:center}
+.log-row:last-child{border-bottom:none}
+.log-row.done-row{background:rgba(255,107,53,0.05)}
+.log-series-num{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);text-align:center}
+.log-input{background:var(--bg);border:.5px solid var(--border2);border-radius:6px;color:var(--text);font-family:'DM Mono',monospace;font-size:12px;padding:5px 7px;width:100%;outline:none;transition:border-color .15s;-webkit-appearance:none}
+.log-input:focus{border-color:var(--accent)}
+.log-input::placeholder{color:var(--muted);opacity:.6}
+.log-note-input{background:var(--bg);border:.5px solid var(--border2);border-radius:6px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:11px;padding:5px 7px;width:100%;outline:none;transition:border-color .15s}
+.log-note-input:focus{border-color:var(--accent)}
+.log-note-input::placeholder{color:var(--muted);opacity:.6}
+
+.hiit-block{background:var(--bg3);border-radius:var(--radius-sm);padding:11px 13px;font-size:12px;color:var(--muted);line-height:1.6;border-left:2px solid var(--legs-c)}
+.hiit-block strong{color:var(--text);font-weight:500;display:block;margin-bottom:4px}
+
+.done-btn{width:calc(100% - 32px);margin:0 16px 15px;border-radius:var(--radius-sm);font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;padding:12px;cursor:pointer;transition:all .18s;letter-spacing:.03em;border:.5px solid}
+.done-btn.undone{background:var(--adim);border-color:var(--accent);color:var(--accent)}
+.done-btn.isdone{background:none;border-color:var(--border2);color:var(--muted)}
+.done-btn:active{transform:scale(.98)}
+
+/* ── TIMER ── */
+.timer-ov{position:fixed;bottom:0;left:0;right:0;background:var(--bg2);border-top:.5px solid var(--border2);padding:15px 20px 26px;display:none;z-index:200;align-items:center;gap:14px}
+.timer-ov.show{display:flex}
+.timer-bar-top{position:absolute;top:0;left:0;height:3px;background:var(--accent);transition:width 1s linear;border-radius:0 2px 2px 0}
+.timer-lbl{font-size:11px;color:var(--muted);margin-bottom:2px}
+.timer-val{font-family:'DM Mono',monospace;font-size:30px;font-weight:500;color:var(--accent);line-height:1}
+.timer-info{flex:1}
+.skip-btn{background:none;border:.5px solid var(--border2);border-radius:var(--radius-sm);color:var(--muted);font-family:'DM Sans',sans-serif;font-size:12px;padding:9px 15px;cursor:pointer}
+.skip-btn:active{background:var(--bg3)}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:3px}
+</style>
+<script>
+if("serviceWorker" in navigator){
+  const swCode=`self.addEventListener("install",e=>{e.waitUntil(caches.open("ppl-v4").then(c=>c.addAll([self.location.pathname])))});self.addEventListener("fetch",e=>{e.respondWith(fetch(e.request).catch(()=>caches.match(e.request)))});`;
+  const blob=new Blob([swCode],{type:"application/javascript"});
+  navigator.serviceWorker.register(URL.createObjectURL(blob));
+}
+</script>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-top">
+    <div>
+      <div class="hdr-eyebrow">Scheda PPL · Intermedio</div>
+      <div class="hdr-title">Corpo Completo</div>
+      <div class="hdr-sub">Massa · Definizione · Core</div>
+    </div>
+    <div class="badges">
+      <span class="badge badge-fire">🔥 Dimagrimento</span>
+      <span class="badge badge-core">◎ Anti-pancia</span>
+      <span class="badge badge-blue">💪 Ipertrofia</span>
+    </div>
+  </div>
+  <div class="prog-wrap">
+    <div class="prog-row">
+      <span class="prog-lbl">Progresso mensile</span>
+      <span class="prog-val" id="mp-count">0 / 12 sessioni</span>
+    </div>
+    <div class="bar-bg"><div class="bar-fill" id="mp-bar" style="width:0%"></div></div>
+  </div>
+  <div class="week-nav" id="weekNav"></div>
+</div>
+
+<div id="mainContent"></div>
+
+<div class="timer-ov" id="timerOv">
+  <div class="timer-bar-top" id="timerBarTop" style="width:100%"></div>
+  <div class="timer-info">
+    <div class="timer-lbl">Recupero in corso…</div>
+    <div class="timer-val" id="timerVal">60</div>
+  </div>
+  <button class="skip-btn" onclick="skipTimer()">Salta ›</button>
+</div>
+
+<script>
+/* ═══════════════════════════════════
+   IMMAGINI WIKIMEDIA COMMONS (CC / PD)
+   Tutte le SVG sono della serie
+   "Everkinetic" — licenza CC-BY-SA 3.0
+   ═══════════════════════════════════ */
+const WK = 'https://upload.wikimedia.org/wikipedia/commons/';
+
+const PROGRAMS = {
+  PUSH:{
+    id:'push', name:'Push — Petto, Spalle, Tricipiti', icon:'⬆', tag:'push',
+    focus:'Petto · Spalle · Tricipiti',
+    exercises:[
+      { name:'Panca Piana con bilanciere',
+        sets:4, reps:'8–10', rest:90,
+        muscles:'Pettorale grande, deltoide anteriore, tricipiti',
+        imgs:[WK+'5/53/Bench_press_1.svg', WK+'3/38/Bench_press_2.svg'],
+        yt:'https://www.youtube.com/results?search_query=panca+piana+tecnica+tutorial',
+        note:'<strong>Setup:</strong> schiena leggermente arcuata, piedi a terra, presa leggermente più larga delle spalle. Abbassa verso il basso del petto, gomiti a ~45°. <em>Tip:</em> immagina di "rompere" il bilanciere per attivare i pettorali.' },
+      { name:'Panca Inclinata con manubri',
+        sets:3, reps:'10–12', rest:75,
+        muscles:'Pettorale superiore, deltoide anteriore',
+        imgs:[WK+'7/7f/Incline-dumbbell-bench-press-1.svg', WK+'c/cf/Incline-dumbbell-bench-press-2.svg'],
+        yt:'https://www.youtube.com/results?search_query=panca+inclinata+manubri+tutorial',
+        note:'<strong>Angolo 30–45°.</strong> Scendi finché i gomiti superano il piano della spalla. <em>Tip:</em> strizza i pettorali in cima senza bloccare i gomiti.' },
+      { name:'Military Press con manubri',
+        sets:4, reps:'10–12', rest:75,
+        muscles:'Deltoide (tutti i capi), trapezio, tricipiti',
+        imgs:[WK+'2/2c/Dumbbell-seated-shoulder-press-1.svg', WK+'5/52/Dumbbell-seated-shoulder-press-2.svg'],
+        yt:'https://www.youtube.com/results?search_query=military+press+manubri+tutorial+spalle',
+        note:'<strong>Core attivo, schiena neutra.</strong> Porta i manubri all\'altezza delle orecchie nel punto basso. <em>Tip:</em> fermati a ~5cm prima del verticale per non scaricare il deltoide.' },
+      { name:'Alzate laterali con manubri',
+        sets:4, reps:'12–15', rest:45,
+        muscles:'Deltoide laterale',
+        imgs:[WK+'5/5e/Dumbbell-lateral-raise-1.svg', WK+'7/7d/Dumbbell-lateral-raise-2.svg'],
+        yt:'https://www.youtube.com/results?search_query=alzate+laterali+manubri+spalle+tecnica',
+        note:'<strong>Peso leggero, tecnica perfetta.</strong> Gomiti leggermente piegati, alza fino a parallelo. <em>Tip:</em> ruota il mignolo verso l\'alto come a "versare un bicchiere". Fase negativa 3 secondi.' },
+      { name:'Cavi — Chest Fly',
+        sets:3, reps:'12–15', rest:60,
+        muscles:'Pettorale grande (definizione)',
+        imgs:[WK+'a/ab/Cable-fly-1.svg', WK+'b/b5/Cable-fly-2.svg'],
+        yt:'https://www.youtube.com/results?search_query=chest+fly+cavi+pettorali+tutorial',
+        note:'<strong>Movimento ampio e controllato.</strong> Braccia leggermente piegate. Strizza i pettorali a fine movimento.' },
+      { name:'Tricipiti ai cavi (pushdown)',
+        sets:3, reps:'12–15', rest:45,
+        muscles:'Tricipite brachiale',
+        imgs:[WK+'3/34/Pushdown-1.svg', WK+'6/6c/Pushdown-2.svg'],
+        yt:'https://www.youtube.com/results?search_query=tricipiti+cavi+pushdown+tutorial',
+        note:'<strong>Gomiti incollati ai fianchi.</strong> Estensione completa, poi risali lento. <em>Tip con la corda:</em> spalanca le mani verso l\'esterno all\'estensione.' },
+    ],
+    core:[
+      { name:'Dead Bug',
+        sets:3, reps:'10 per lato', rest:40,
+        muscles:'Trasverso addominale, retto, stabilizzatori lombari',
+        imgs:[], yt:'https://www.youtube.com/results?search_query=dead+bug+esercizio+addome+tutorial',
+        note:'<strong>Sdraiato, braccia verso il soffitto, ginocchia a 90°.</strong> Abbassa braccio dx + gamba sx contemporaneamente sfiorando il suolo. <em>Perché funziona:</em> attiva il trasverso, il muscolo che "stringe" la vita dall\'interno.' },
+      { name:'Plank con toccata spalle',
+        sets:3, reps:'12 per lato', rest:40,
+        muscles:'Core, obliqui, anti-rotazione',
+        imgs:[], yt:'https://www.youtube.com/results?search_query=plank+shoulder+tap+tutorial+core',
+        note:'<strong>In posizione plank su mani.</strong> Tocca la spalla opposta mantenendo i fianchi fermi. <em>Tip:</em> piedi più larghi per stabilità. Devastante per gli obliqui.' },
+      { name:'Bicicletta (Bicycle crunch)',
+        sets:3, reps:'20 alternati', rest:35,
+        muscles:'Obliqui, retto addominale',
+        imgs:[WK+'3/thirty/Bicycle-crunches-1.svg', WK+'d/dd/Bicycle-crunches-2.svg'],
+        yt:'https://www.youtube.com/results?search_query=bicycle+crunch+obliqui+tutorial',
+        note:'<strong>Lento e controllato.</strong> Porta il gomito verso il ginocchio opposto ruotando il busto, non il collo. Espira a ogni rotazione.' },
+    ],
+    hiit:'6 round × (30s burpee / 30s riposo). ~6 min. Brucia calorie con effetto EPOC: il metabolismo rimane alto per ore dopo.'
+  },
+
+  PULL:{
+    id:'pull', name:'Pull — Schiena, Bicipiti, Spalla post.', icon:'⬇', tag:'pull',
+    focus:'Dorsali · Bicipiti · Deltoide post.',
+    exercises:[
+      { name:'Lat Machine (presa larga)',
+        sets:4, reps:'10–12', rest:80,
+        muscles:'Gran dorsale, bicipiti, romboidi, trapezio medio',
+        imgs:[WK+'a/a9/Wide_grip_lat_pull_down_1.svg', WK+'3/3b/Wide_grip_lat_pull_down_2.svg'],
+        yt:'https://www.youtube.com/results?search_query=lat+machine+presa+larga+tutorial+dorsali',
+        note:'<strong>Presa leggermente più larga delle spalle, palme in avanti.</strong> Porta la barra verso la parte alta del petto. Prima di tirare, spingi le scapole verso il basso. <em>Tip:</em> immagina di portare i gomiti verso i fianchi.' },
+      { name:'Rematore con bilanciere',
+        sets:4, reps:'8–10', rest:75,
+        muscles:'Dorsali, romboidi, deltoide posteriore, bicipiti',
+        imgs:[WK+'9/ninety/Barbell-bent-over-row-1.svg', WK+'b/b7/Barbell-bent-over-row-2.svg'],
+        yt:'https://www.youtube.com/results?search_query=rematore+bilanciere+tecnica+tutorial',
+        note:'<strong>Busto inclinato 45°, schiena piatta.</strong> Porta il bilanciere verso l\'ombelico, gomiti vicini al corpo. <em>Tip:</em> tieni il collo neutro.' },
+      { name:'Alzate posteriori (Rear delt fly)',
+        sets:4, reps:'12–15', rest:45,
+        muscles:'Deltoide posteriore, romboidi',
+        imgs:[WK+'b/b2/Dumbbell-rear-lateral-raise-1.svg', WK+'4/43/Dumbbell-rear-lateral-raise-2.svg'],
+        yt:'https://www.youtube.com/results?search_query=alzate+posteriori+rear+delt+fly+tutorial',
+        note:'<strong>Busto piegato a 90°.</strong> Porta i gomiti verso il soffitto. Peso leggero, fase negativa lenta. Fondamentale per le spalle 3D.' },
+      { name:'Curl bilanciere EZ',
+        sets:3, reps:'10–12', rest:60,
+        muscles:'Bicipite, brachiale anteriore',
+        imgs:[WK+'8/8d/EZ-bar-curl-1.svg', WK+'a/af/EZ-bar-curl-2.svg'],
+        yt:'https://www.youtube.com/results?search_query=curl+bilanciere+EZ+bicipiti+tutorial',
+        note:'<strong>Gomiti fissi ai fianchi.</strong> Fase negativa 3 secondi. <em>Tip:</em> supina i polsi salendo per massimizzare la contrazione. Niente dondolio.' },
+      { name:'Curl a martello con manubri',
+        sets:3, reps:'10–12', rest:45,
+        muscles:'Brachioradiale, brachiale, bicipite (capo lungo)',
+        imgs:[WK+'7/seventy/Hammer-curl-1.svg', WK+'8/85/Hammer-curl-2.svg'],
+        yt:'https://www.youtube.com/results?search_query=curl+martello+manubri+tutorial+bicipiti',
+        note:'<strong>Presa neutra per tutta la durata.</strong> Ottimo per lo spessore del braccio. Alterna le braccia o falle insieme.' },
+      { name:'Pull-over con manubrio',
+        sets:3, reps:'12–15', rest:60,
+        muscles:'Gran dorsale, pettorale (lungo), serrato',
+        imgs:[WK+'7/7c/Dumbbell-pullover-1.svg', WK+'4/4f/Dumbbell-pullover-2.svg'],
+        yt:'https://www.youtube.com/results?search_query=pull+over+manubrio+tutorial+dorsali',
+        note:'<strong>Sdraiato traversale sul banco.</strong> Manubrio sopra il petto, abbassalo in arco dietro la testa con gomiti leggermente piegati.' },
+    ],
+    core:[
+      { name:'Hollow Body Hold',
+        sets:3, reps:'25–35 secondi', rest:40,
+        muscles:'Retto addominale, trasverso, flessori anca',
+        imgs:[], yt:'https://www.youtube.com/results?search_query=hollow+body+hold+core+tutorial',
+        note:'<strong>Sdraiato, schiena piatta al suolo, braccia dietro la testa e gambe a ~30cm.</strong> Tieni la posizione. Se cedi in lordosi, alza le gambe. Tensione continua — niente momenti di riposo.' },
+      { name:'Russian Twist con peso',
+        sets:3, reps:'15 per lato', rest:40,
+        muscles:'Obliqui, trasverso, retto addominale',
+        imgs:[WK+'3/thirty/Russian-twist-1.svg', WK+'a/a2/Russian-twist-2.svg'],
+        yt:'https://www.youtube.com/results?search_query=russian+twist+obliqui+tutorial',
+        note:'<strong>Seduto con gambe sollevate.</strong> Tieni un manubrio e ruota il busto da lato a lato toccando il suolo. La rotazione viene dal busto, non dalle braccia.' },
+      { name:'Mountain Climber (lento)',
+        sets:3, reps:'30 secondi', rest:35,
+        muscles:'Core completo, obliqui, spalle',
+        imgs:[], yt:'https://www.youtube.com/results?search_query=mountain+climber+lento+core+tutorial',
+        note:'<strong>In posizione plank su mani.</strong> Porta un ginocchio al petto lentamente poi cambia. <em>Tip:</em> non alzare il sedere. Lento = core puro. Veloce = HIIT.' },
+    ],
+    hiit:'5 round × (40s salto della corda o jumping jack / 20s riposo). Oppure 10 min bici: 1 min veloce / 1 min lento.'
+  },
+
+  LEGS:{
+    id:'legs', name:'Legs + Core — Gambe, Glutei, Addome', icon:'🦵', tag:'legs',
+    focus:'Quadricipiti · Glutei · Core Intenso',
+    exercises:[
+      { name:'Leg Press',
+        sets:4, reps:'12–15', rest:75,
+        muscles:'Quadricipiti, glutei, femorali',
+        imgs:[WK+'1/1f/Leg-press-1.svg', WK+'8/8c/Leg-press-2.svg'],
+        yt:'https://www.youtube.com/results?search_query=leg+press+tecnica+tutorial+gambe',
+        note:'<strong>Piedi alla larghezza delle spalle, a metà piattaforma.</strong> Non bloccare le ginocchia in estensione. <em>Tip:</em> piedi alti = più glutei e femorali. Piedi bassi = più quadricipiti.' },
+      { name:'Goblet Squat con manubrio',
+        sets:3, reps:'12–15', rest:60,
+        muscles:'Quadricipiti, glutei, core, mobilità',
+        imgs:[WK+'9/ninety/Goblet-squat-1.svg', WK+'1/1c/Goblet-squat-2.svg'],
+        yt:'https://www.youtube.com/results?search_query=goblet+squat+manubrio+tutorial',
+        note:'<strong>Manubrio verticale davanti al petto.</strong> Piedi più larghi delle spalle, punte ruotate fuori 30°. Il peso davanti aiuta naturalmente il busto eretto. Nessuno stress assiale sulla schiena.' },
+      { name:'Romanian Deadlift con bilanciere',
+        sets:3, reps:'10–12', rest:75,
+        muscles:'Femorali, glutei, lombari',
+        imgs:[WK+'9/9d/Romanian-deadlift-1.svg', WK+'4/44/Romanian-deadlift-2.svg'],
+        yt:'https://www.youtube.com/results?search_query=romanian+deadlift+tutorial+femorali',
+        note:'<strong>Spingi il bacino indietro</strong> abbassando il bilanciere lungo le gambe finché senti lo stretch nei femorali. Schiena sempre piatta.' },
+      { name:'Affondi bulgari con manubri',
+        sets:3, reps:'10 per lato', rest:60,
+        muscles:'Quadricipiti, glutei, femorali, equilibrio',
+        imgs:[WK+'b/b8/Bulgarian-split-squat-1.svg', WK+'3/36/Bulgarian-split-squat-2.svg'],
+        yt:'https://www.youtube.com/results?search_query=affondi+bulgari+split+squat+tutorial',
+        note:'<strong>Piede posteriore su panca, piede anteriore avanzato.</strong> Scendi finché il ginocchio posteriore sfiora il pavimento. Inizia senza manubri per prendere confidenza.' },
+    ],
+    core:[
+      { name:'Crunch inversi su panca',
+        sets:4, reps:'15', rest:40,
+        muscles:'Retto addominale inferiore, flessori anca',
+        imgs:[WK+'9/9f/Reverse-crunch-1.svg', WK+'f/f3/Reverse-crunch-2.svg'],
+        yt:'https://www.youtube.com/results?search_query=crunch+inversi+panca+addome+basso+tutorial',
+        note:'<strong>Sdraiato sul banco, gambe a 90°.</strong> Porta le ginocchia al petto sollevando il bacino. Abbassa in 3 secondi. Attacca la parte bassa della pancia, la più difficile.' },
+      { name:'Ab Wheel (rollout)',
+        sets:3, reps:'8–10', rest:50,
+        muscles:'Retto addominale, trasverso, dorsali, spalle',
+        imgs:[WK+'3/3b/Ab-rollout-on-knees-with-barbell-1.svg', WK+'8/85/Ab-rollout-on-knees-with-barbell-2.svg'],
+        yt:'https://www.youtube.com/results?search_query=ab+wheel+rollout+tutorial+addome',
+        note:'<strong>In ginocchio, ruota in avanti mantenendo la schiena piatta.</strong> Torna indietro contraendo il core. Inizia con piccoli movimenti. <em>Alternativa:</em> usa un bilanciere.' },
+      { name:'Leg Raise appeso alla sbarra',
+        sets:3, reps:'12', rest:45,
+        muscles:'Retto addominale inferiore, obliqui, flessori anca',
+        imgs:[WK+'1/1e/Hanging-leg-raise-1.svg', WK+'e/ec/Hanging-leg-raise-2.svg'],
+        yt:'https://www.youtube.com/results?search_query=leg+raise+sbarra+addome+tutorial',
+        note:'<strong>Appeso alla sbarra, solleva le gambe tese fino a 90°.</strong> Fase negativa controllata. <em>Alternativa più facile:</em> leg raise sdraiato sul banco con le mani sotto i glutei.' },
+      { name:'Plank con alzata gamba alternata',
+        sets:3, reps:'12 per lato', rest:40,
+        muscles:'Core, glutei, stabilità lombare',
+        imgs:[], yt:'https://www.youtube.com/results?search_query=plank+leg+lift+alternato+core+tutorial',
+        note:'<strong>In plank su avambracci.</strong> Alza una gamba tesa per 2 secondi mantenendo i fianchi paralleli al suolo. Non lasciare ruotare il bacino.' },
+    ],
+    hiit:'4 round × (30s squat jump / 15s riposo / 30s step-up su panca / 15s riposo). ~6 min. Le gambe sono i muscoli più grandi — il loro HIIT brucia più calorie di qualsiasi altro.'
+  }
+};
+
+const WEEK_PATTERNS=[['PUSH','PULL','LEGS'],['PUSH','PULL','LEGS'],['PUSH','PULL','LEGS'],['PUSH','PULL','LEGS']];
+const DAY_NAMES=['Giorno A','Giorno B','Giorno C'];
+const WEEKS=4;
+
+let state={};
+try{state=JSON.parse(localStorage.getItem('ppl4_state')||'{}');}catch(e){}
+let currentWeek=parseInt(localStorage.getItem('ppl4_week')||'0');
+let timerInterval=null,timerTotal=0,timerLeft=0;
+
+function save(){localStorage.setItem('ppl4_state',JSON.stringify(state));localStorage.setItem('ppl4_week',String(currentWeek));}
+function sk(w,d){return `w${w}d${d}`;}
+function ek(w,d,t,i,s){return `w${w}d${d}${t}${i}s${s}`;}
+function lk(w,d,t,i,s,field){return `log_w${w}d${d}${t}${i}s${s}_${field}`;}
+
+function countDone(){let n=0;for(let w=0;w<WEEKS;w++)for(let d=0;d<3;d++)if(state[sk(w,d)]==='done')n++;return n;}
+
+function updateProgress(){
+  const done=countDone(),total=WEEKS*3;
+  document.getElementById('mp-count').textContent=`${done} / ${total} sessioni`;
+  document.getElementById('mp-bar').style.width=`${Math.round(done/total*100)}%`;
+}
+
+function renderWeekNav(){
+  const nav=document.getElementById('weekNav');nav.innerHTML='';
+  for(let w=0;w<WEEKS;w++){
+    const b=document.createElement('button');
+    b.className='wbtn'+(w===currentWeek?' active':'');
+    b.textContent=`Settimana ${w+1}`;
+    b.onclick=()=>{currentWeek=w;save();renderWeekNav();renderWeek();};
+    nav.appendChild(b);
+  }
+}
+
+function renderWeek(){
+  const el=document.getElementById('mainContent');el.innerHTML='';
+  const pat=WEEK_PATTERNS[currentWeek];
+  let wDone=0;
+  for(let d=0;d<3;d++)if(state[sk(currentWeek,d)]==='done')wDone++;
+  const totalEx=pat.reduce((a,p)=>a+PROGRAMS[p].exercises.length+PROGRAMS[p].core.length,0);
+
+  const stats=document.createElement('div');
+  stats.className='stats-row';
+  stats.innerHTML=`
+    <div class="stat-c"><div class="stat-v">${wDone}/3</div><div class="stat-l">Sessioni</div></div>
+    <div class="stat-c"><div class="stat-v">${totalEx}</div><div class="stat-l">Esercizi</div></div>
+    <div class="stat-c"><div class="stat-v">PPL</div><div class="stat-l">Schema</div></div>`;
+  el.appendChild(stats);
+
+  const tip=document.createElement('div');
+  tip.className='tip-box';
+  tip.innerHTML='<strong>◎ Core Anti-Pancia incluso</strong>Ogni sessione ha 3–4 esercizi di core specifici (evidenziati in viola). Tocca "info ▾" su ogni esercizio per vedere immagini tutorial e note tecniche. Tocca "📊 kg" per registrare pesi, ripetizioni e note per ogni serie.';
+  el.appendChild(tip);
+
+  const lbl=document.createElement('div');
+  lbl.className='sec-lbl';
+  lbl.textContent=`Settimana ${currentWeek+1} — Sessioni`;
+  el.appendChild(lbl);
+
+  for(let d=0;d<3;d++){
+    const prog=PROGRAMS[pat[d]];
+    el.appendChild(buildCard(currentWeek,d,prog,state[sk(currentWeek,d)]==='done'));
+  }
+  updateProgress();
+}
+
+function seriesCount(w,d,prog){
+  let total=0,done=0;
+  prog.exercises.forEach((ex,ei)=>{for(let s=0;s<ex.sets;s++){total++;if(state[ek(w,d,'e',ei,s)]==='1')done++;}});
+  prog.core.forEach((ex,ci)=>{for(let s=0;s<ex.sets;s++){total++;if(state[ek(w,d,'c',ci,s)]==='1')done++;}});
+  return{total,done};
+}
+
+function buildCard(w,d,prog,isDone){
+  const card=document.createElement('div');
+  card.className='s-card'+(isDone?' done':'');
+  card.id=`card-${w}-${d}`;
+  const{total,done}=seriesCount(w,d,prog);
+  card.innerHTML=`
+    <div class="s-head" onclick="toggleCard(${w},${d})">
+      <div class="s-icon ${prog.tag}">${prog.icon}</div>
+      <div class="s-info">
+        <div class="s-day">${DAY_NAMES[d]} <span class="s-tag ${prog.tag}">${prog.tag.toUpperCase()}</span></div>
+        <div class="s-name">${prog.name}</div>
+        <div class="s-meta">${done}/${total} serie completate</div>
+      </div>
+      <span class="chevron">⌄</span>
+    </div>
+    <div class="ex-list" id="exlist-${w}-${d}">
+      ${prog.exercises.map((ex,ei)=>buildEx(w,d,ex,ei,'e',false)).join('')}
+      <div class="core-section-hdr"><div class="core-dot"></div><span class="core-hdr-txt">Core Anti-Pancia</span></div>
+      ${prog.core.map((ex,ci)=>buildEx(w,d,ex,ci,'c',true)).join('')}
+      <div class="ex-item">
+        <div class="ex-top">
+          <span class="ex-num" style="color:#ffcc44">⚡</span>
+          <div class="ex-info">
+            <div class="ex-name">HIIT Finale — Bruciagrassi</div>
+            <div class="ex-params"><span class="ex-pill">Alta intensità</span><span class="ex-pill">~6 min</span></div>
+          </div>
+        </div>
+        <div class="hiit-block"><strong>Come eseguire:</strong> ${prog.hiit}</div>
+      </div>
+      <button class="done-btn ${isDone?'isdone':'undone'}" onclick="completeSession(${w},${d})">
+        ${isDone?'✓ Sessione completata':'Segna come completata'}
+      </button>
+    </div>`;
+  return card;
+}
+
+function buildEx(w,d,ex,idx,type,isCore){
+  const uid=`${w}-${d}-${type}-${idx}`;
+  const sbBtns=Array.from({length:ex.sets},(_,s)=>{
+    const done=state[ek(w,d,type,idx,s)]==='1';
+    return `<button class="sb${isCore?' core-sb':''}${done?' done':''}" id="sb-${uid}-${s}" onclick="toggleSerie(${w},${d},${idx},${s},'${type}',${ex.rest})">${s+1}</button>`;
+  }).join('');
+
+  const restBtn=ex.rest>0?`<button class="rest-btn" onclick="startTimer(${ex.rest})">⏱ ${ex.rest}s</button>`:'';
+
+  // log rows
+  const logRows=Array.from({length:ex.sets},(_,s)=>{
+    const kg=state[lk(w,d,type,idx,s,'kg')]||'';
+    const rip=state[lk(w,d,type,idx,s,'rip')]||'';
+    const nota=state[lk(w,d,type,idx,s,'nota')]||'';
+    const isDoneRow=state[ek(w,d,type,idx,s)]==='1';
+    return `<div class="log-row${isDoneRow?' done-row':''}" id="logrow-${uid}-${s}">
+      <span class="log-series-num">${s+1}</span>
+      <input class="log-input" type="number" inputmode="decimal" placeholder="kg" value="${kg}"
+        onchange="saveLog(${w},${d},${idx},'${type}',${s},'kg',this.value)">
+      <input class="log-input" type="number" inputmode="numeric" placeholder="rip." value="${rip}"
+        onchange="saveLog(${w},${d},${idx},'${type}',${s},'rip',this.value)">
+      <input class="log-note-input" type="text" placeholder="note…" value="${nota}"
+        onchange="saveLog(${w},${d},${idx},'${type}',${s},'nota',this.value)">
+    </div>`;
+  }).join('');
+
+  // immagini tutorial
+  let imgHtml='';
+  if(ex.imgs && ex.imgs.length>0){
+    imgHtml=`<div class="info-imgs">
+      ${ex.imgs.map(src=>`<img class="info-img" src="${src}" alt="tutorial ${ex.name}" loading="lazy" onerror="this.style.display='none'">`).join('')}
+    </div>`;
+  }
+
+  const noteClass=`info-note${isCore?' core-note':''}`;
+
+  return `
+    <div class="ex-item${isCore?' core-ex':''}">
+      <div class="ex-top">
+        <span class="ex-num">${isCore?'◎':'0'+(idx+1)}</span>
+        <div class="ex-info">
+          <div class="ex-name">${ex.name}</div>
+          <div class="ex-params">
+            <span class="ex-pill${isCore?' core':''}">${ex.sets} serie</span>
+            <span class="ex-pill${isCore?' core':''}">${ex.reps}</span>
+            ${ex.rest>0?`<span class="ex-pill">${ex.rest}s rec.</span>`:''}
+          </div>
+        </div>
+        <button class="info-btn" onclick="toggleInfo('info-${uid}')">info ▾</button>
+      </div>
+
+      <div class="info-panel" id="info-${uid}">
+        ${imgHtml}
+        <a class="info-yt" href="${ex.yt}" target="_blank" rel="noopener">
+          <div class="yt-icon">▶</div>
+          <span class="yt-txt">Guarda tutorial su YouTube</span>
+          <span class="yt-arr">›</span>
+        </a>
+        <div class="${noteClass}"><strong>Muscoli:</strong> ${ex.muscles}<br><br>${ex.note}</div>
+      </div>
+
+      <div class="series-row">
+        ${sbBtns}${restBtn}
+        <button class="log-toggle" id="logtgl-${uid}" onclick="toggleLog('log-${uid}','logtgl-${uid}')">📊 kg</button>
+      </div>
+
+      <div class="log-panel" id="log-${uid}">
+        <div class="log-header">
+          <span>Serie</span><span>Kg</span><span>Rip.</span><span>Note</span>
+        </div>
+        ${logRows}
+      </div>
+    </div>`;
+}
+
+function toggleCard(w,d){document.getElementById(`card-${w}-${d}`).classList.toggle('open');}
+
+function toggleInfo(id){
+  const el=document.getElementById(id);
+  el.classList.toggle('show');
+}
+
+function toggleLog(panelId,btnId){
+  const panel=document.getElementById(panelId);
+  const btn=document.getElementById(btnId);
+  const isOpen=panel.classList.toggle('show');
+  btn.classList.toggle('active',isOpen);
+}
+
+function saveLog(w,d,idx,type,s,field,val){
+  state[lk(w,d,type,idx,s,field)]=val;
+  save();
+}
+
+function toggleSerie(w,d,idx,s,type,rest){
+  const k=ek(w,d,type,idx,s);
+  const btn=document.getElementById(`sb-${w}-${d}-${type}-${idx}-${s}`);
+  const row=document.getElementById(`logrow-${w}-${d}-${type}-${idx}-${s}`);
+  if(state[k]==='1'){
+    state[k]='0'; btn.classList.remove('done');
+    if(row)row.classList.remove('done-row');
+  } else {
+    state[k]='1'; btn.classList.add('done');
+    if(row)row.classList.add('done-row');
+    if(rest>0)startTimer(rest);
+  }
+  save(); refreshMeta(w,d);
+}
+
+function refreshMeta(w,d){
+  const prog=PROGRAMS[WEEK_PATTERNS[currentWeek][d]];
+  const{total,done}=seriesCount(w,d,prog);
+  const card=document.getElementById(`card-${w}-${d}`);
+  if(card){const m=card.querySelector('.s-meta');if(m)m.textContent=`${done}/${total} serie completate`;}
+}
+
+function completeSession(w,d){
+  const k=sk(w,d);state[k]=state[k]==='done'?'':'done';save();renderWeek();
+}
+
+function startTimer(sec){
+  stopTimer();timerTotal=sec;timerLeft=sec;
+  document.getElementById('timerOv').classList.add('show');
+  updateTimerUI();
+  timerInterval=setInterval(()=>{timerLeft--;updateTimerUI();if(timerLeft<=0)stopTimer();},1000);
+}
+function updateTimerUI(){
+  document.getElementById('timerVal').textContent=timerLeft;
+  document.getElementById('timerBarTop').style.width=`${Math.round(timerLeft/timerTotal*100)}%`;
+}
+function skipTimer(){stopTimer();}
+function stopTimer(){
+  if(timerInterval){clearInterval(timerInterval);timerInterval=null;}
+  document.getElementById('timerOv').classList.remove('show');
+}
+
+renderWeekNav();
+renderWeek();
+</script>
+<div id="pwa-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:300;background:#1a1a1a;border-top:.5px solid rgba(255,107,53,0.4);padding:14px 16px 28px;align-items:center;gap:12px"><div style="width:40px;height:40px;border-radius:10px;background:rgba(255,107,53,0.2);border:.5px solid #ff6b35;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0">&#x1F4AA;</div><div style="flex:1;min-width:0"><div style="font-size:13px;font-weight:600;color:#ede9e3;margin-bottom:2px">Installa come App</div><div style="font-size:11px;color:#7a7772;line-height:1.4">Tocca <strong style="color:#ede9e3">Condividi</strong> &#x25A1;&#x2191; poi <strong style="color:#ede9e3">"Aggiungi a schermata Home"</strong></div></div><button onclick="document.getElementById('pwa-banner').style.display='none';localStorage.setItem('pwa-dismissed','1')" style="background:none;border:.5px solid rgba(255,255,255,0.13);border-radius:6px;color:#7a7772;font-size:12px;padding:6px 10px;cursor:pointer;flex-shrink:0;font-family:inherit">&#x2715;</button></div>
+<script>
+(function(){
+  var isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent);
+  var isStandalone=window.navigator.standalone===true;
+  var dismissed=localStorage.getItem("pwa-dismissed");
+  if(isIOS&&!isStandalone&&!dismissed){
+    setTimeout(function(){document.getElementById("pwa-banner").style.display="flex";},1800);
+  }
+})();
+</script>
+</body>
+</html>
