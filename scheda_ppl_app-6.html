@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Scheda PPL</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Scheda PPL">
+<meta name="theme-color" content="#f5f5f7">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAGOElEQVR4nO3ZR25cRxCHcd2AN+At5gpiEskFSTHsnG35ZsxZzDntCPAaTnTOlmcWFihryJnu6p7/61dfAb+dQOFV1ydA0rNnDMMwDMMwDMMwDMMwDMMwDMMwFZ/+/v436C31m7sZ9UODSHo+6ocDMfR81A8EYpCM+jFACJJRLx/Vob7Fno562agu9W1mHfVyUQ71rSYf9UJRHvXNJhv1IlEu9e2aRr081If6loNHvTDUj/qmux71olBf6tvuOOoFof7UN/7oqBcDP9S3/t6oFwJ/1Df/zqiXAX/UN/921IuAX+rb5/ghx/HDPQKAaxw/3CMAuMbxwz0CgGscP9wjALjG8cM9AoBrBADXOH64RwBwjQDgGscP9wgArhEAXCMAuEYAcI0A4BoBwDUCgGsEANc4frhHAHCNAOAaAcA1AoBrBADXCACuEQBcIwC4RgBwjQDgGgHANQKAawQA1wgArhEAXCMAuEYAcI0A4BoBwDUCgGsEANcIAK4RAFwrNoA3XzaCqZftQWnvUlwA/7xqmKmPpI5KfZeiAkixZCLgXR4qKoC/mwtKRX00dVLyuxQTQMolt9zc3DxKfVBV9NS+Ur8NAbTx1xeNJK6vr7umProqCNlXqjcigEwBXF1dBVMfoFLMvgggkz+bi7G6vLwMpj5CpZh9pXgnAsgQwMXFRTT1ISpY9kUAGfzxecPk/Pw8mvoYFSz7sr4VARCAHAHULICzs7Nord9/bm6uI/XRdqPb77DsiwAy+L25GIvT09Mos7OzwdRH3k7Md8TuzPpWBJAhgJOTk2AzMzPR1Af/kOU7YvZGABn89lnD5Pj4ONj09HQ09dE/ZPmOmL1Z34oAMgRwdHQU5OXLl2bqw29J8R2huyOADH5tLsYi9BGnpqbM1MffkuI7QndnfSsCyBDA4eFhkMnJSbO7uzu5FN8RujsCyOCXTxsmBwcHQSYmJsxub2/lUnxH6O6sb0UAGQLY39/v6P7+Hh10s0cCyODn5mIs9vb2nqQ+rJJ02qX1rQggQwC7u7tPUh9VSTrtkgAKDIAI0hw/AWTy0ycNk52dnSDj4+NmMf+LmlqK7wjdnfWtCCBDAK9fvw4yNjZmFvrPhzmk+I7Q3RFABj82F2Oxvb0dZHR01KzTXxZ7IcV3hO7O+lYEkCGAra2tIC9evDAL/ZMzhxTfEbo7Asjgh48bJpubm0FGRkbMQn/PHBTfYX0rAqhAAMPDw2Z9fX1yKb6DACoQwPfNxVhsbGwEGRoaMlMff0uK7wjdnfWtCCBDAOvr68EGBwejqQ//Ict3xOyNADK4/6hhsra2FmxgYCCa+ugfsnxHzN6sb0UAGQJYXV2N8vz582C93Eu3Yr4jdmcEUMEAVlZWonV7QOojTxVC69dZ9kUAGXzXXIyFNQBvLPuyvhUBZAhgeXk5mvoYFSz7IoAMvv2wYbK0tBRNfYwKln1Z34oAMgTQsri4GEx9iEox+0rxTgTQxjfNxVgtLCwEUx+hUsy+UrwTAWQKoGV+fr5r6gOsgpB9pXojAmjj6w8aSXH46UJI/TYE0EbrfzRTLrn189RHVQelv0tRAXzVXFAqBMC7tBQVQKpl//ez1MdTB6W/S3EBWBb+/5+hPp46KP1digmg3bIt1IdTJyW/CwHA9bsUFUCqZasPpo5KfZfiArAsXH0kHpT2LsUGAKRAAHCNAOAaAcA1AoBrBADXCACuEQBcIwC4RgBwjQDgGgHANQKAawQA1wgArhEAXCMAuEYAcI0A4BoBwDVTAESAkpmPnwBQMgKAawQA1wgArhEAXCMAuEYAcI0A4FqSAIgAJUp2/ASAEhEAXEsaABGgJMmPnwBQEgKAa1kCIAKUINvxEwBKkDUAIkCVZT9+AkCV9SQAIkAV9ez4CQBV1NMAiABV0vPjJwBUiSQAIkAVyI6fCKCmvv23o14E/FHf/DujXgb8Ud/8e6NeCPxQ3/qjo14M6k994x1HvSDUl/q2ux71olA/6psOHvXCUB/qWzaNenkol/p2k416kSiP+maTj3qhKIf6VrOOermoLvVt9nTUy0Z1qG9ROurlg8OvxKgfAxx+ZUb9QODoKzPqhwNHX/lRP7RH6jdnGIZhGIZhGIZhGIZhGIZhOs6/mTUfuJXKb3MAAAAASUVORK5CYII=">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── VARIABILI ── */
+:root {
+  --bg:#f5f5f7; --bg2:#ffffff; --bg3:#f0f0f2; --card:#ffffff;
+  --border:rgba(0,0,0,0.08); --border2:rgba(0,0,0,0.14);
+  --text:#1a1a1e; --muted:#8a8a96;
+  --accent:#ff3b30; --accent2:#ff6b35;
+  --blue:#007aff; --green:#34c759; --purple:#af52de;
+  --push-c:#ff3b30; --pull-c:#007aff; --legs-c:#34c759; --core-c:#af52de;
+  --push-bg:rgba(255,59,48,0.08); --pull-bg:rgba(0,122,255,0.08);
+  --legs-bg:rgba(52,199,89,0.08); --core-bg:rgba(175,82,222,0.08);
+  --radius:18px; --radius-sm:12px;
+  --shadow:0 1px 3px rgba(0,0,0,0.08),0 4px 16px rgba(0,0,0,0.04);
+  --shadow-sm:0 1px 2px rgba(0,0,0,0.06);
+}
+@media(prefers-color-scheme:dark) {
+  :root {
+    --bg:#0c0c0e; --bg2:#1c1c1e; --bg3:#2c2c2e; --card:#1c1c1e;
+    --border:rgba(255,255,255,0.08); --border2:rgba(255,255,255,0.15);
+    --text:#f2f2f7; --muted:#8e8e93;
+    --push-bg:rgba(255,59,48,0.12); --pull-bg:rgba(10,132,255,0.12);
+    --legs-bg:rgba(48,209,88,0.12); --core-bg:rgba(191,90,242,0.12);
+    --push-c:#ff453a; --pull-c:#0a84ff; --legs-c:#30d158; --core-c:#bf5af2;
+    --blue:#0a84ff; --green:#30d158;
+    --shadow:0 2px 8px rgba(0,0,0,0.4),0 8px 24px rgba(0,0,0,0.25);
+    --shadow-sm:0 1px 4px rgba(0,0,0,0.3);
+  }
+}
+* { box-sizing:border-box; margin:0; padding:0; -webkit-tap-highlight-color:transparent; }
+body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; padding-bottom:80px; }
+
+/* ── HEADER ── */
+.hdr { background:var(--bg); backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px); padding:0; position:sticky; top:0; z-index:100; border-bottom:.5px solid var(--border); }
+.hdr-hero { padding:20px 20px 0; }
+.hdr-eyebrow { font-size:10px; font-weight:600; letter-spacing:.14em; color:var(--accent); text-transform:uppercase; margin-bottom:4px; }
+.hdr-row { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:14px; }
+.hdr-title { font-size:26px; font-weight:700; line-height:1.1; letter-spacing:-.4px; }
+.hdr-sub { font-size:12px; color:var(--muted); margin-top:4px; }
+.hdr-avatar { width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,var(--accent),#ff9500); display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+.prog-wrap { padding:0 20px 14px; }
+.prog-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; }
+.prog-lbl { font-size:11px; color:var(--muted); font-weight:500; }
+.prog-val { font-family:'DM Mono',monospace; font-size:11px; color:var(--accent); font-weight:500; }
+.bar-bg { background:rgba(0,0,0,0.07); border-radius:6px; height:6px; overflow:hidden; }
+.bar-fill { background:linear-gradient(90deg,var(--accent),var(--accent2)); height:100%; border-radius:6px; transition:width .6s cubic-bezier(.4,0,.2,1); }
+.week-nav { display:flex; gap:6px; padding:0 20px 14px; overflow-x:auto; scrollbar-width:none; }
+.week-nav::-webkit-scrollbar { display:none; }
+.wbtn { background:var(--bg3); border:.5px solid var(--border2); border-radius:20px; color:var(--muted); font-family:'Inter',sans-serif; font-size:12px; font-weight:500; padding:7px 16px; cursor:pointer; white-space:nowrap; transition:all .18s; flex-shrink:0; }
+.wbtn.active { background:var(--accent); border-color:var(--accent); color:#fff; font-weight:600; }
+
+/* ── CONTENT ── */
+.stats-row { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; padding:0 16px 14px; }
+.stat-c { background:var(--card); border-radius:var(--radius-sm); padding:14px 12px; text-align:center; box-shadow:var(--shadow-sm); border:.5px solid var(--border); }
+.stat-v { font-family:'DM Mono',monospace; font-size:22px; font-weight:600; color:var(--accent); line-height:1; margin-bottom:4px; }
+.stat-l { font-size:10px; color:var(--muted); letter-spacing:.04em; text-transform:uppercase; font-weight:500; }
+.sec-lbl { font-size:11px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); padding:0 20px 10px; }
+
+/* ── SESSIONE CARD ── */
+.s-card { background:var(--card); border-radius:var(--radius); margin:0 16px 12px; overflow:hidden; box-shadow:var(--shadow); border:.5px solid var(--border); transition:transform .15s; }
+.s-card:active { transform:scale(.99); }
+.s-head { display:flex; align-items:center; gap:14px; padding:16px; cursor:pointer; user-select:none; }
+.s-icon { width:46px; height:46px; border-radius:14px; display:flex; align-items:center; justify-content:center; font-size:22px; flex-shrink:0; }
+.s-icon.push { background:var(--push-bg); }
+.s-icon.pull { background:var(--pull-bg); }
+.s-icon.legs { background:var(--legs-bg); }
+.s-info { flex:1; min-width:0; }
+.s-day { font-size:11px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:4px; display:flex; align-items:center; gap:6px; font-weight:500; }
+.s-tag { display:inline-block; padding:2px 8px; border-radius:20px; font-size:9px; font-weight:700; letter-spacing:.06em; }
+.s-tag.push { background:var(--push-bg); color:var(--push-c); }
+.s-tag.pull { background:var(--pull-bg); color:var(--pull-c); }
+.s-tag.legs { background:var(--legs-bg); color:var(--legs-c); }
+.s-name { font-size:16px; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; letter-spacing:-.2px; }
+.s-meta { font-size:12px; color:var(--muted); margin-top:3px; }
+.s-right { display:flex; align-items:center; gap:10px; flex-shrink:0; }
+.chevron { color:var(--muted); font-size:18px; transition:transform .3s; opacity:.5; }
+.s-card.open .chevron { transform:rotate(180deg); opacity:.8; }
+.s-ring { width:36px; height:36px; flex-shrink:0; }
+.s-ring-bg { fill:none; stroke:rgba(0,0,0,0.07); stroke-width:3; }
+.s-ring-fill { fill:none; stroke-width:3; stroke-linecap:round; transition:stroke-dashoffset .5s cubic-bezier(.4,0,.2,1); }
+.s-ring-fill.push { stroke:var(--push-c); }
+.s-ring-fill.pull { stroke:var(--pull-c); }
+.s-ring-fill.legs { stroke:var(--legs-c); }
+
+/* ── EXERCISE LIST ── */
+.ex-list { display:none; border-top:.5px solid var(--border); }
+.s-card.open .ex-list { display:block; animation:slideDown .3s cubic-bezier(.4,0,.2,1); }
+.session-timer { display:flex; align-items:center; gap:8px; padding:9px 16px; background:var(--bg3); border-bottom:.5px solid var(--border); font-size:12px; color:var(--muted); font-weight:500; }
+.timer-dot { width:6px; height:6px; border-radius:50%; background:var(--accent); animation:pulse .8s ease-in-out infinite; }
+.session-note-wrap { padding:12px 16px; border-bottom:.5px solid var(--border); }
+.note-lbl { font-size:10px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin-bottom:7px; }
+.note-input { width:100%; background:var(--bg2); border:.5px solid var(--border2); border-radius:10px; color:var(--text); font-family:'Inter',sans-serif; font-size:13px; padding:10px 12px; outline:none; resize:none; line-height:1.5; min-height:44px; transition:border-color .15s; }
+.note-input:focus { border-color:var(--blue); }
+.note-input::placeholder { color:var(--muted); opacity:.6; }
+.core-hdr { display:flex; align-items:center; gap:8px; padding:14px 16px 6px; border-top:.5px solid var(--border); }
+.core-dot { width:6px; height:6px; border-radius:50%; background:var(--core-c); }
+.core-txt { font-size:10px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--core-c); }
+
+/* ── EXERCISE ITEM ── */
+.ex-item { padding:14px 16px; border-bottom:.5px solid var(--border); }
+.ex-item:last-child { border-bottom:none; }
+.ex-item.core { background:rgba(175,82,222,0.02); border-left:2px solid rgba(175,82,222,0.3); }
+.ex-top { display:flex; align-items:flex-start; gap:10px; margin-bottom:10px; }
+.ex-num { font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); margin-top:2px; flex-shrink:0; width:18px; opacity:.6; }
+.ex-body { flex:1; min-width:0; }
+.ex-name-row { display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin-bottom:4px; }
+.ex-name { font-size:15px; font-weight:600; letter-spacing:-.2px; }
+.pr-badge { background:rgba(255,149,0,.12); color:#ff9500; border:.5px solid rgba(255,149,0,.3); border-radius:20px; padding:2px 8px; font-size:10px; font-weight:700; white-space:nowrap; }
+.ex-pills { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:5px; }
+.pill { background:rgba(0,0,0,.04); border:.5px solid var(--border2); border-radius:20px; padding:3px 10px; font-size:11px; color:var(--muted); font-weight:500; }
+.pill.core { background:var(--core-bg); color:var(--core-c); }
+.suggest { display:inline-flex; align-items:center; gap:4px; background:rgba(0,122,255,.08); color:var(--blue); border-radius:20px; padding:3px 10px; font-size:11px; font-weight:500; }
+.info-btn { background:var(--bg3); border:.5px solid var(--border); border-radius:20px; color:var(--muted); font-family:'Inter',sans-serif; font-size:11px; font-weight:500; padding:5px 12px; cursor:pointer; flex-shrink:0; transition:all .18s; }
+.info-btn:active { background:var(--border2); }
+
+/* ── INFO PANEL ── */
+.info-panel { display:none; margin-bottom:12px; border-radius:var(--radius-sm); overflow:hidden; border:.5px solid var(--border2); }
+.info-panel.open { display:block; }
+.info-imgs { display:flex; gap:1px; background:var(--border); }
+.img-cell { flex:1; background:#f8f9fb; display:flex; flex-direction:column; align-items:center; padding:8px 6px 5px; }
+.img-lbl { font-size:9px; color:#aaa; letter-spacing:.08em; text-transform:uppercase; margin-top:4px; font-family:'DM Mono',monospace; }
+.info-yt { display:flex; align-items:center; gap:10px; padding:10px 13px; background:var(--bg3); border-top:.5px solid var(--border); text-decoration:none; }
+.info-yt:active { background:var(--border); }
+.yt-icon { width:28px; height:28px; background:#ff0000; border-radius:6px; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:#fff; font-size:11px; font-weight:700; }
+.yt-txt { font-size:12px; color:var(--muted); flex:1; font-weight:500; }
+.yt-arr { font-size:14px; color:var(--muted); opacity:.4; }
+.info-note { padding:12px 13px; background:var(--bg2); font-size:12px; color:var(--muted); line-height:1.6; border-top:.5px solid var(--border); }
+.info-note.core { border-left:2px solid rgba(175,82,222,.4); }
+.info-note strong { color:var(--text); font-weight:600; }
+.info-note em { color:var(--accent2); font-style:normal; font-weight:500; }
+
+/* ── SERIE ── */
+.series-row { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:4px; }
+.sb { width:44px; height:44px; border-radius:50%; background:var(--bg3); border:1.5px solid var(--border2); color:var(--muted); font-family:'DM Mono',monospace; font-size:13px; font-weight:600; cursor:pointer; transition:all .2s; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.sb:active { transform:scale(.88); }
+.sb.done { background:var(--accent); border-color:var(--accent); color:#fff; }
+.sb.done.core { background:var(--core-c); border-color:var(--core-c); }
+.rest-btn { background:var(--bg3); border:.5px solid var(--border); border-radius:20px; color:var(--muted); font-family:'Inter',sans-serif; font-size:11px; font-weight:500; padding:6px 14px; cursor:pointer; transition:all .15s; margin-left:2px; }
+.rest-btn:active { background:var(--border2); }
+.log-btn { background:var(--bg3); border:.5px solid var(--border); border-radius:20px; color:var(--muted); font-family:'Inter',sans-serif; font-size:11px; font-weight:500; padding:6px 12px; cursor:pointer; margin-left:2px; transition:all .18s; }
+.log-btn.open { border-color:var(--accent); color:var(--accent); background:rgba(255,59,48,.06); }
+
+/* ── LOG PANEL ── */
+.log-panel { display:none; margin-top:10px; background:var(--bg3); border-radius:var(--radius-sm); overflow:hidden; border:.5px solid var(--border); }
+.log-panel.open { display:block; }
+.log-hdr { display:grid; grid-template-columns:24px 1fr 1fr 1fr; gap:4px; padding:7px 12px; border-bottom:.5px solid var(--border); background:rgba(0,0,0,.02); }
+.log-hdr span { font-size:9px; color:var(--muted); font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+.log-row { display:grid; grid-template-columns:24px 1fr 1fr 1fr; gap:4px; padding:7px 12px; border-bottom:.5px solid var(--border); align-items:center; }
+.log-row:last-child { border-bottom:none; }
+.log-row.done { background:rgba(52,199,89,.04); }
+.log-num { font-family:'DM Mono',monospace; font-size:11px; color:var(--muted); text-align:center; font-weight:500; opacity:.6; }
+.log-input { background:var(--bg2); border:.5px solid var(--border); border-radius:8px; color:var(--text); font-family:'DM Mono',monospace; font-size:12px; padding:5px 7px; width:100%; outline:none; transition:border-color .15s; -webkit-appearance:none; font-weight:500; }
+.log-input:focus { border-color:var(--blue); }
+.log-input::placeholder { color:var(--muted); opacity:.4; }
+.log-input.prefill { border-color:rgba(0,122,255,.3); color:rgba(0,122,255,.8); }
+.rpe-sel { background:var(--bg2); border:.5px solid var(--border); border-radius:8px; color:var(--muted); font-family:'Inter',sans-serif; font-size:11px; padding:5px 4px; width:100%; outline:none; -webkit-appearance:none; cursor:pointer; font-weight:500; }
+.rpe-sel:focus { border-color:var(--blue); }
+.chart-wrap { padding:10px 14px 6px; background:var(--bg3); border-top:.5px solid var(--border); }
+.chart-lbl { font-size:10px; color:var(--muted); font-weight:600; letter-spacing:.06em; text-transform:uppercase; margin-bottom:6px; display:flex; justify-content:space-between; align-items:center; }
+.chart-val { color:var(--blue); font-family:'DM Mono',monospace; }
+
+/* ── HIIT & DONE BTN ── */
+.hiit-block { background:rgba(52,199,89,.06); border-radius:var(--radius-sm); padding:12px 14px; font-size:12px; color:var(--muted); line-height:1.6; border-left:3px solid var(--green); }
+.hiit-block strong { color:var(--text); font-weight:600; display:block; margin-bottom:5px; }
+.done-btn { width:calc(100% - 32px); margin:4px 16px 16px; border-radius:var(--radius-sm); font-family:'Inter',sans-serif; font-size:14px; font-weight:600; padding:14px; cursor:pointer; transition:all .2s; letter-spacing:-.1px; border:none; }
+.done-btn.todo { background:var(--accent); color:#fff; box-shadow:var(--shadow); }
+.done-btn.did { background:var(--bg3); color:var(--muted); border:.5px solid var(--border); }
+.done-btn:active { transform:scale(.97); }
+
+/* ── TIMER CERCHIO ── */
+.timer-ov { position:fixed; bottom:0; left:0; right:0; background:var(--bg); backdrop-filter:saturate(180%) blur(24px); -webkit-backdrop-filter:saturate(180%) blur(24px); border-top:.5px solid var(--border); padding:20px 28px 36px; display:none; z-index:200; flex-direction:column; align-items:center; gap:12px; box-shadow:0 -8px 32px rgba(0,0,0,.08); }
+.timer-ov.show { display:flex; }
+.timer-ring-wrap { position:relative; width:130px; height:130px; }
+.timer-ring-svg { width:130px; height:130px; transform:rotate(-90deg); }
+.ring-bg { fill:none; stroke:rgba(0,0,0,0.07); stroke-width:8; }
+.ring-fill { fill:none; stroke-width:8; stroke-linecap:round; transition:stroke .4s; }
+.ring-fill.green { stroke:#34c759; }
+.ring-fill.orange { stroke:#ff9500; }
+.ring-fill.red { stroke:#ff3b30; animation:pulse .6s ease-in-out infinite; }
+.timer-center { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); text-align:center; }
+.timer-big { font-family:'DM Mono',monospace; font-size:38px; font-weight:700; color:var(--text); line-height:1; letter-spacing:-1px; }
+.timer-sub { font-size:10px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--muted); margin-top:2px; }
+.skip-btn { background:var(--bg3); border:.5px solid var(--border); border-radius:14px; color:var(--muted); font-family:'Inter',sans-serif; font-size:14px; font-weight:500; padding:13px; cursor:pointer; width:100%; transition:background .15s; }
+.skip-btn:active { background:var(--border); transform:scale(.97); }
+
+/* ── BOTTOM NAV ── */
+.bottom-nav { position:fixed; bottom:0; left:0; right:0; z-index:150; background:var(--bg); backdrop-filter:saturate(180%) blur(20px); -webkit-backdrop-filter:saturate(180%) blur(20px); border-top:.5px solid var(--border); display:flex; padding:10px 0 24px; }
+.nav-btn { flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; background:none; border:none; cursor:pointer; padding:4px 0; color:var(--muted); font-family:'Inter',sans-serif; font-size:10px; font-weight:500; letter-spacing:.04em; transition:color .18s; }
+.nav-btn.active { color:var(--accent); }
+.nav-btn svg { width:22px; height:22px; stroke-width:1.8; }
+
+/* ── STATS PAGE ── */
+.page { display:none; padding:16px; }
+.page.show { display:block; }
+.section { margin-bottom:24px; }
+.section-title { font-size:13px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); margin-bottom:12px; padding:0 4px; }
+.orm-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.orm-card { background:var(--card); border:.5px solid var(--border); border-radius:14px; padding:14px; box-shadow:var(--shadow-sm); }
+.orm-name { font-size:12px; font-weight:600; color:var(--text); margin-bottom:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.orm-val { font-family:'DM Mono',monospace; font-size:22px; font-weight:700; color:var(--accent); line-height:1; margin-bottom:2px; }
+.orm-sub { font-size:10px; color:var(--muted); }
+.vol-row { display:flex; align-items:center; gap:10px; margin-bottom:10px; }
+.vol-label { font-size:12px; font-weight:500; color:var(--text); width:80px; flex-shrink:0; }
+.vol-bg { flex:1; background:var(--bg3); border-radius:4px; height:8px; overflow:hidden; }
+.vol-fill { height:100%; border-radius:4px; transition:width .6s; }
+.vol-count { font-family:'DM Mono',monospace; font-size:11px; color:var(--muted); width:28px; text-align:right; flex-shrink:0; }
+.weight-card { background:var(--card); border:.5px solid var(--border); border-radius:14px; padding:16px; box-shadow:var(--shadow-sm); }
+.weight-row { display:flex; align-items:center; gap:10px; margin-bottom:12px; }
+.weight-inp { background:var(--bg3); border:.5px solid var(--border2); border-radius:10px; color:var(--text); font-family:'DM Mono',monospace; font-size:18px; font-weight:600; padding:8px 12px; width:110px; outline:none; text-align:center; -webkit-appearance:none; }
+.weight-inp:focus { border-color:var(--blue); }
+.weight-unit { font-size:16px; color:var(--muted); font-weight:500; }
+.weight-save { background:var(--accent); color:#fff; border:none; border-radius:10px; padding:9px 18px; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; cursor:pointer; }
+.weight-save:active { transform:scale(.97); }
+.weight-hist { font-size:12px; color:var(--muted); }
+.backup-row { display:flex; gap:8px; margin-bottom:10px; }
+.bk-btn { flex:1; background:var(--bg3); border:.5px solid var(--border2); border-radius:12px; padding:13px 10px; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:var(--text); cursor:pointer; display:flex; align-items:center; justify-content:center; gap:7px; box-shadow:var(--shadow-sm); transition:background .15s; }
+.bk-btn:active { background:var(--border); transform:scale(.97); }
+.bk-btn.primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+.bk-note { font-size:11px; color:var(--muted); line-height:1.5; }
+.exp-btn { width:100%; background:var(--bg3); border:.5px solid var(--border2); border-radius:14px; padding:14px; font-family:'Inter',sans-serif; font-size:14px; font-weight:600; color:var(--text); cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px; box-shadow:var(--shadow-sm); transition:background .15s; margin-top:10px; }
+.exp-btn:active { background:var(--border); }
+.streak-banner { margin:0 0 12px; background:rgba(255,149,0,.08); border:.5px solid rgba(255,149,0,.25); border-radius:12px; padding:10px 14px; font-size:13px; color:#ff9500; font-weight:500; display:flex; align-items:center; gap:8px; }
+.deload-badge { background:rgba(52,199,89,.1); color:#34c759; border-radius:20px; padding:2px 8px; font-size:10px; font-weight:600; margin-left:4px; }
+
+/* ── ANIMAZIONI ── */
+@keyframes slideDown { from { opacity:0; transform:translateY(-8px); } to { opacity:1; transform:translateY(0); } }
+@keyframes pulse { 0%,100% { transform:scale(1); } 50% { transform:scale(1.1); } }
+@keyframes popIn { 0% { transform:scale(1); } 40% { transform:scale(.82); } 70% { transform:scale(1.18); } 100% { transform:scale(1); } }
+@keyframes confettiFall { 0% { transform:translateY(-10px) rotate(0deg); opacity:1; } 100% { transform:translateY(100vh) rotate(720deg); opacity:0; } }
+@keyframes fadeUp { from { opacity:0; transform:translateY(40px); } to { opacity:1; transform:translateY(0); } }
+.pop { animation:popIn .35s cubic-bezier(.4,0,.2,1) forwards; }
+.confetto { position:fixed; pointer-events:none; z-index:999; animation:confettiFall 1.2s cubic-bezier(.25,.46,.45,.94) forwards; }
+#toast { position:fixed; bottom:90px; left:50%; transform:translateX(-50%); background:var(--text); color:var(--bg); padding:10px 20px; border-radius:20px; font-size:13px; font-weight:600; z-index:400; white-space:nowrap; box-shadow:var(--shadow); font-family:'Inter',sans-serif; animation:fadeUp .3s cubic-bezier(.4,0,.2,1); }
+#summary-modal > div { animation:fadeUp .3s cubic-bezier(.4,0,.2,1); }
+
+::-webkit-scrollbar { width:0; }
+</style>
+<script>
+if("serviceWorker"in navigator){
+  var swCode='self.addEventListener("install",function(e){e.waitUntil(caches.open("ppl-v6").then(function(c){return c.addAll([self.location.pathname]);}));});self.addEventListener("fetch",function(e){e.respondWith(fetch(e.request).catch(function(){return caches.match(e.request);}));});';
+  var blob=new Blob([swCode],{type:"application/javascript"});
+  navigator.serviceWorker.register(URL.createObjectURL(blob));
+}
+</script>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="hdr-hero">
+    <div class="hdr-eyebrow">Personal Trainer</div>
+    <div class="hdr-row">
+      <div>
+        <div class="hdr-title">Scheda PPL</div>
+        <div class="hdr-sub">Intermedio · Definizione + Massa</div>
+      </div>
+      <div class="hdr-avatar">💪</div>
+    </div>
+  </div>
+  <div class="prog-wrap">
+    <div class="prog-row">
+      <span class="prog-lbl">Progressione mensile</span>
+      <span class="prog-val" id="mpCount">0 / 12</span>
+    </div>
+    <div class="bar-bg"><div class="bar-fill" id="mpBar" style="width:0%"></div></div>
+  </div>
+  <div class="week-nav" id="weekNav"></div>
+</div>
+
+<div id="homePage"></div>
+<div id="statsPage" class="page"></div>
+
+<nav class="bottom-nav">
+  <button class="nav-btn active" id="navHome" onclick="showPage('home')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg>
+    Scheda
+  </button>
+  <button class="nav-btn" id="navStats" onclick="showPage('stats')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+    Statistiche
+  </button>
+</nav>
+
+<div class="timer-ov" id="timerOv">
+  <div class="timer-ring-wrap">
+    <svg class="timer-ring-svg" viewBox="0 0 130 130">
+      <circle class="ring-bg" cx="65" cy="65" r="56"/>
+      <circle class="ring-fill green" id="timerRing" cx="65" cy="65" r="56" stroke-dasharray="352" stroke-dashoffset="0"/>
+    </svg>
+    <div class="timer-center">
+      <div class="timer-big" id="timerVal">60</div>
+      <div class="timer-sub">recupero</div>
+    </div>
+  </div>
+  <button class="skip-btn" onclick="skipTimer()">Salta ›</button>
+</div>
+
+<script id="programsScript">
+const PROGRAMS = {
+  PUSH:{
+    id:'push', name:'Push — Petto, Spalle, Tricipiti', icon:'⬆', tag:'push',
+    focus:'Petto · Spalle · Tricipiti',
+    exercises:[
+      { name:'Panca Piana con bilanciere',
+        sets:4, reps:'8–10', rest:90,
+        muscles:'Pettorale grande, deltoide anteriore, tricipiti',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><rect x=\"10\" y=\"65\" width=\"100\" height=\"7\" rx=\"3\" fill=\"#ccc\"/><rect x=\"20\" y=\"72\" width=\"5\" height=\"18\" fill=\"#aaa\"/><rect x=\"95\" y=\"72\" width=\"5\" height=\"18\" fill=\"#aaa\"/><circle cx=\"60\" cy=\"55\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"62\" x2=\"90\" y2=\"65\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"62\" x2=\"30\" y2=\"65\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"18\" y1=\"44\" x2=\"102\" y2=\"44\" stroke=\"#888\" stroke-width=\"4\"/><rect x=\"12\" y=\"38\" width=\"5\" height=\"14\" rx=\"2\" fill=\"#ff6b35\"/><rect x=\"103\" y=\"38\" width=\"5\" height=\"14\" rx=\"2\" fill=\"#ff6b35\"/><line x1=\"48\" y1=\"60\" x2=\"32\" y2=\"44\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"72\" y1=\"60\" x2=\"88\" y2=\"44\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><rect x=\"10\" y=\"65\" width=\"100\" height=\"7\" rx=\"3\" fill=\"#ccc\"/><rect x=\"20\" y=\"72\" width=\"5\" height=\"18\" fill=\"#aaa\"/><rect x=\"95\" y=\"72\" width=\"5\" height=\"18\" fill=\"#aaa\"/><circle cx=\"60\" cy=\"55\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"62\" x2=\"90\" y2=\"65\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"62\" x2=\"30\" y2=\"65\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"18\" y1=\"22\" x2=\"102\" y2=\"22\" stroke=\"#888\" stroke-width=\"4\"/><rect x=\"12\" y=\"16\" width=\"5\" height=\"14\" rx=\"2\" fill=\"#ff6b35\"/><rect x=\"103\" y=\"16\" width=\"5\" height=\"14\" rx=\"2\" fill=\"#ff6b35\"/><line x1=\"48\" y1=\"60\" x2=\"32\" y2=\"22\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"72\" y1=\"60\" x2=\"88\" y2=\"22\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=panca+piana+tecnica+tutorial',
+        note:'<strong>Setup:</strong> schiena leggermente arcuata, piedi a terra, presa leggermente più larga delle spalle. Abbassa verso il basso del petto, gomiti a ~45°. <em>Tip:</em> immagina di "rompere" il bilanciere per attivare i pettorali.' },
+      { name:'Panca Inclinata con manubri',
+        sets:3, reps:'10–12', rest:75,
+        muscles:'Pettorale superiore, deltoide anteriore',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><line x1=\"20\" y1=\"80\" x2=\"90\" y2=\"45\" stroke=\"#ccc\" stroke-width=\"8\" stroke-linecap=\"round\"/><line x1=\"25\" y1=\"80\" x2=\"25\" y2=\"95\" stroke=\"#aaa\" stroke-width=\"4\"/><line x1=\"85\" y1=\"50\" x2=\"85\" y2=\"65\" stroke=\"#aaa\" stroke-width=\"4\"/><circle cx=\"72\" cy=\"32\" r=\"7\" fill=\"#333\"/><line x1=\"72\" y1=\"39\" x2=\"55\" y2=\"60\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"55\" y1=\"60\" x2=\"30\" y2=\"75\" stroke=\"#333\" stroke-width=\"2.5\"/><circle cx=\"42\" cy=\"26\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"42\" y1=\"26\" x2=\"52\" y2=\"26\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"52\" cy=\"26\" r=\"5\" fill=\"#ff6b35\"/><circle cx=\"80\" cy=\"26\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"80\" y1=\"26\" x2=\"90\" y2=\"26\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"90\" cy=\"26\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"64\" y1=\"44\" x2=\"47\" y2=\"26\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"64\" y1=\"44\" x2=\"85\" y2=\"26\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><line x1=\"20\" y1=\"80\" x2=\"90\" y2=\"45\" stroke=\"#ccc\" stroke-width=\"8\" stroke-linecap=\"round\"/><line x1=\"25\" y1=\"80\" x2=\"25\" y2=\"95\" stroke=\"#aaa\" stroke-width=\"4\"/><line x1=\"85\" y1=\"50\" x2=\"85\" y2=\"65\" stroke=\"#aaa\" stroke-width=\"4\"/><circle cx=\"72\" cy=\"32\" r=\"7\" fill=\"#333\"/><line x1=\"72\" y1=\"39\" x2=\"55\" y2=\"60\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"55\" y1=\"60\" x2=\"30\" y2=\"75\" stroke=\"#333\" stroke-width=\"2.5\"/><circle cx=\"42\" cy=\"12\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"42\" y1=\"12\" x2=\"52\" y2=\"12\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"52\" cy=\"12\" r=\"5\" fill=\"#ff6b35\"/><circle cx=\"80\" cy=\"12\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"80\" y1=\"12\" x2=\"90\" y2=\"12\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"90\" cy=\"12\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"64\" y1=\"44\" x2=\"47\" y2=\"12\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"64\" y1=\"44\" x2=\"85\" y2=\"12\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=panca+inclinata+manubri+tutorial',
+        note:'<strong>Angolo 30–45°.</strong> Scendi finché i gomiti superano il piano della spalla. <em>Tip:</em> strizza i pettorali in cima senza bloccare i gomiti.' },
+      { name:'Military Press con manubri',
+        sets:4, reps:'10–12', rest:75,
+        muscles:'Deltoide (tutti i capi), trapezio, tricipiti',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><rect x=\"35\" y=\"65\" width=\"50\" height=\"7\" rx=\"3\" fill=\"#ccc\"/><line x1=\"40\" y1=\"72\" x2=\"40\" y2=\"90\" stroke=\"#aaa\" stroke-width=\"4\"/><line x1=\"80\" y1=\"72\" x2=\"80\" y2=\"90\" stroke=\"#aaa\" stroke-width=\"4\"/><circle cx=\"60\" cy=\"38\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"45\" x2=\"60\" y2=\"65\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"65\" x2=\"45\" y2=\"78\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"60\" y1=\"65\" x2=\"75\" y2=\"78\" stroke=\"#333\" stroke-width=\"2.5\"/><circle cx=\"28\" cy=\"52\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"28\" y1=\"52\" x2=\"38\" y2=\"52\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"38\" cy=\"52\" r=\"5\" fill=\"#ff6b35\"/><circle cx=\"82\" cy=\"52\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"82\" y1=\"52\" x2=\"92\" y2=\"52\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"92\" cy=\"52\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"52\" y1=\"50\" x2=\"33\" y2=\"52\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"68\" y1=\"50\" x2=\"87\" y2=\"52\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><rect x=\"35\" y=\"65\" width=\"50\" height=\"7\" rx=\"3\" fill=\"#ccc\"/><line x1=\"40\" y1=\"72\" x2=\"40\" y2=\"90\" stroke=\"#aaa\" stroke-width=\"4\"/><line x1=\"80\" y1=\"72\" x2=\"80\" y2=\"90\" stroke=\"#aaa\" stroke-width=\"4\"/><circle cx=\"60\" cy=\"38\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"45\" x2=\"60\" y2=\"65\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"65\" x2=\"45\" y2=\"78\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"60\" y1=\"65\" x2=\"75\" y2=\"78\" stroke=\"#333\" stroke-width=\"2.5\"/><circle cx=\"28\" cy=\"15\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"28\" y1=\"15\" x2=\"38\" y2=\"15\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"38\" cy=\"15\" r=\"5\" fill=\"#ff6b35\"/><circle cx=\"82\" cy=\"15\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"82\" y1=\"15\" x2=\"92\" y2=\"15\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"92\" cy=\"15\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"52\" y1=\"45\" x2=\"33\" y2=\"15\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"68\" y1=\"45\" x2=\"87\" y2=\"15\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=military+press+manubri+tutorial+spalle',
+        note:'<strong>Core attivo, schiena neutra.</strong> Porta i manubri all\'altezza delle orecchie nel punto basso. <em>Tip:</em> fermati a ~5cm prima del verticale per non scaricare il deltoide.' },
+      { name:'Alzate laterali con manubri',
+        sets:4, reps:'12–15', rest:45,
+        muscles:'Deltoide laterale',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><circle cx=\"60\" cy=\"20\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"27\" x2=\"60\" y2=\"60\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"35\" x2=\"45\" y2=\"50\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"60\" y1=\"35\" x2=\"75\" y2=\"50\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"60\" y1=\"60\" x2=\"45\" y2=\"85\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"60\" x2=\"75\" y2=\"85\" stroke=\"#333\" stroke-width=\"3\"/><circle cx=\"36\" cy=\"52\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"36\" y1=\"52\" x2=\"44\" y2=\"52\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"44\" cy=\"52\" r=\"5\" fill=\"#ff6b35\"/><circle cx=\"76\" cy=\"52\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"76\" y1=\"52\" x2=\"84\" y2=\"52\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"84\" cy=\"52\" r=\"5\" fill=\"#ff6b35\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><circle cx=\"60\" cy=\"20\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"27\" x2=\"60\" y2=\"60\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"35\" x2=\"20\" y2=\"35\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"60\" y1=\"35\" x2=\"100\" y2=\"35\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"60\" y1=\"60\" x2=\"45\" y2=\"85\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"60\" x2=\"75\" y2=\"85\" stroke=\"#333\" stroke-width=\"3\"/><circle cx=\"10\" cy=\"35\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"10\" y1=\"35\" x2=\"19\" y2=\"35\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"19\" cy=\"35\" r=\"5\" fill=\"#ff6b35\"/><circle cx=\"101\" cy=\"35\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"101\" y1=\"35\" x2=\"110\" y2=\"35\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"110\" cy=\"35\" r=\"5\" fill=\"#ff6b35\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=alzate+laterali+manubri+spalle+tecnica',
+        note:'<strong>Peso leggero, tecnica perfetta.</strong> Gomiti leggermente piegati, alza fino a parallelo. <em>Tip:</em> ruota il mignolo verso l\'alto come a "versare un bicchiere". Fase negativa 3 secondi.' },
+      { name:'Cavi — Chest Fly',
+        sets:3, reps:'12–15', rest:60,
+        muscles:'Pettorale grande (definizione)',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><rect x=\"5\" y=\"5\" width=\"8\" height=\"90\" rx=\"3\" fill=\"#aaa\"/><rect x=\"107\" y=\"5\" width=\"8\" height=\"90\" rx=\"3\" fill=\"#aaa\"/><circle cx=\"60\" cy=\"25\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"32\" x2=\"60\" y2=\"65\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"65\" x2=\"45\" y2=\"90\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"65\" x2=\"75\" y2=\"90\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"42\" x2=\"13\" y2=\"42\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"60\" y1=\"42\" x2=\"107\" y2=\"42\" stroke=\"#333\" stroke-width=\"2.5\"/><circle cx=\"13\" cy=\"42\" r=\"4\" fill=\"#ff6b35\"/><circle cx=\"107\" cy=\"42\" r=\"4\" fill=\"#ff6b35\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><rect x=\"5\" y=\"5\" width=\"8\" height=\"90\" rx=\"3\" fill=\"#aaa\"/><rect x=\"107\" y=\"5\" width=\"8\" height=\"90\" rx=\"3\" fill=\"#aaa\"/><circle cx=\"60\" cy=\"25\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"32\" x2=\"60\" y2=\"65\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"65\" x2=\"45\" y2=\"90\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"65\" x2=\"75\" y2=\"90\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"42\" x2=\"45\" y2=\"48\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"60\" y1=\"42\" x2=\"75\" y2=\"48\" stroke=\"#333\" stroke-width=\"2.5\"/><circle cx=\"45\" cy=\"48\" r=\"4\" fill=\"#ff6b35\"/><circle cx=\"75\" cy=\"48\" r=\"4\" fill=\"#ff6b35\"/><line x1=\"13\" y1=\"42\" x2=\"45\" y2=\"48\" stroke=\"#ff6b35\" stroke-width=\"1.5\" stroke-dasharray=\"2,2\"/><line x1=\"107\" y1=\"42\" x2=\"75\" y2=\"48\" stroke=\"#ff6b35\" stroke-width=\"1.5\" stroke-dasharray=\"2,2\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=chest+fly+cavi+pettorali+tutorial',
+        note:'<strong>Movimento ampio e controllato.</strong> Braccia leggermente piegate. Strizza i pettorali a fine movimento.' },
+      { name:'Tricipiti ai cavi (pushdown)',
+        sets:3, reps:'12–15', rest:45,
+        muscles:'Tricipite brachiale',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><rect x=\"50\" y=\"5\" width=\"20\" height=\"8\" rx=\"3\" fill=\"#aaa\"/><line x1=\"60\" y1=\"13\" x2=\"60\" y2=\"30\" stroke=\"#888\" stroke-width=\"2\" stroke-dasharray=\"3,2\"/><line x1=\"48\" y1=\"30\" x2=\"72\" y2=\"30\" stroke=\"#666\" stroke-width=\"4\" stroke-linecap=\"round\"/><circle cx=\"60\" cy=\"42\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"49\" x2=\"60\" y2=\"75\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"75\" x2=\"45\" y2=\"95\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"75\" x2=\"75\" y2=\"95\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"53\" y1=\"55\" x2=\"50\" y2=\"30\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"67\" y1=\"55\" x2=\"70\" y2=\"30\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><rect x=\"50\" y=\"5\" width=\"20\" height=\"8\" rx=\"3\" fill=\"#aaa\"/><line x1=\"60\" y1=\"13\" x2=\"60\" y2=\"30\" stroke=\"#888\" stroke-width=\"2\" stroke-dasharray=\"3,2\"/><line x1=\"48\" y1=\"30\" x2=\"72\" y2=\"30\" stroke=\"#666\" stroke-width=\"4\" stroke-linecap=\"round\"/><circle cx=\"60\" cy=\"42\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"49\" x2=\"60\" y2=\"75\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"75\" x2=\"45\" y2=\"95\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"75\" x2=\"75\" y2=\"95\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"53\" y1=\"55\" x2=\"50\" y2=\"72\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"67\" y1=\"55\" x2=\"70\" y2=\"72\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"50\" y1=\"30\" x2=\"50\" y2=\"72\" stroke=\"#ff6b35\" stroke-width=\"1.5\" stroke-dasharray=\"2,2\"/><line x1=\"70\" y1=\"30\" x2=\"70\" y2=\"72\" stroke=\"#ff6b35\" stroke-width=\"1.5\" stroke-dasharray=\"2,2\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=tricipiti+cavi+pushdown+tutorial',
+        note:'<strong>Gomiti incollati ai fianchi.</strong> Estensione completa, poi risali lento. <em>Tip con la corda:</em> spalanca le mani verso l\'esterno all\'estensione.' },
+    ],
+    core:[
+      { name:'Dead Bug',
+        sets:3, reps:'10 per lato', rest:40,
+        muscles:'Trasverso addominale, retto, stabilizzatori lombari',
+        imgs:["",""], yt:'https://www.youtube.com/results?search_query=dead+bug+esercizio+addome+tutorial',
+        note:'<strong>Sdraiato, braccia verso il soffitto, ginocchia a 90°.</strong> Abbassa braccio dx + gamba sx contemporaneamente sfiorando il suolo. <em>Perché funziona:</em> attiva il trasverso, il muscolo che "stringe" la vita dall\'interno.' },
+      { name:'Plank con toccata spalle',
+        sets:3, reps:'12 per lato', rest:40,
+        muscles:'Core, obliqui, anti-rotazione',
+        imgs:["",""], yt:'https://www.youtube.com/results?search_query=plank+shoulder+tap+tutorial+core',
+        note:'<strong>In posizione plank su mani.</strong> Tocca la spalla opposta mantenendo i fianchi fermi. <em>Tip:</em> piedi più larghi per stabilità. Devastante per gli obliqui.' },
+      { name:'Bicicletta (Bicycle crunch)',
+        sets:3, reps:'20 alternati', rest:35,
+        muscles:'Obliqui, retto addominale',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><line x1=\"10\" y1=\"90\" x2=\"110\" y2=\"90\" stroke=\"#ddd\" stroke-width=\"2\"/><circle cx=\"30\" cy=\"68\" r=\"7\" fill=\"#333\"/><line x1=\"30\" y1=\"75\" x2=\"60\" y2=\"82\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"30\" y1=\"75\" x2=\"18\" y2=\"85\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"18\" y1=\"85\" x2=\"55\" y2=\"70\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"60\" y1=\"82\" x2=\"55\" y2=\"70\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"55\" y1=\"70\" x2=\"45\" y2=\"90\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"60\" y1=\"82\" x2=\"100\" y2=\"82\" stroke=\"#333\" stroke-width=\"3\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><line x1=\"10\" y1=\"90\" x2=\"110\" y2=\"90\" stroke=\"#ddd\" stroke-width=\"2\"/><circle cx=\"85\" cy=\"68\" r=\"7\" fill=\"#333\"/><line x1=\"85\" y1=\"75\" x2=\"60\" y2=\"82\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"85\" y1=\"75\" x2=\"98\" y2=\"85\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"98\" y1=\"85\" x2=\"65\" y2=\"70\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"60\" y1=\"82\" x2=\"65\" y2=\"70\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"65\" y1=\"70\" x2=\"75\" y2=\"90\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"60\" y1=\"82\" x2=\"20\" y2=\"82\" stroke=\"#333\" stroke-width=\"3\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=bicycle+crunch+obliqui+tutorial',
+        note:'<strong>Lento e controllato.</strong> Porta il gomito verso il ginocchio opposto ruotando il busto, non il collo. Espira a ogni rotazione.' },
+    ],
+    hiit:'6 round × (30s burpee / 30s riposo). ~6 min. Brucia calorie con effetto EPOC: il metabolismo rimane alto per ore dopo.'
+  },
+
+  PULL:{
+    id:'pull', name:'Pull — Schiena, Bicipiti, Spalla post.', icon:'⬇', tag:'pull',
+    focus:'Dorsali · Bicipiti · Deltoide post.',
+    exercises:[
+      { name:'Lat Machine (presa larga)',
+        sets:4, reps:'10–12', rest:80,
+        muscles:'Gran dorsale, bicipiti, romboidi, trapezio medio',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><rect x=\"45\" y=\"5\" width=\"30\" height=\"8\" rx=\"3\" fill=\"#aaa\"/><line x1=\"60\" y1=\"13\" x2=\"60\" y2=\"30\" stroke=\"#888\" stroke-width=\"2\"/><line x1=\"30\" y1=\"30\" x2=\"90\" y2=\"30\" stroke=\"#666\" stroke-width=\"5\" stroke-linecap=\"round\"/><rect x=\"35\" y=\"70\" width=\"50\" height=\"7\" rx=\"3\" fill=\"#ccc\"/><rect x=\"40\" y=\"77\" width=\"5\" height=\"18\" fill=\"#aaa\"/><rect x=\"75\" y=\"77\" width=\"5\" height=\"18\" fill=\"#aaa\"/><circle cx=\"60\" cy=\"50\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"57\" x2=\"60\" y2=\"70\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"53\" y1=\"55\" x2=\"30\" y2=\"30\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"67\" y1=\"55\" x2=\"90\" y2=\"30\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><rect x=\"45\" y=\"5\" width=\"30\" height=\"8\" rx=\"3\" fill=\"#aaa\"/><line x1=\"60\" y1=\"13\" x2=\"60\" y2=\"30\" stroke=\"#888\" stroke-width=\"2\"/><line x1=\"30\" y1=\"30\" x2=\"90\" y2=\"30\" stroke=\"#666\" stroke-width=\"5\" stroke-linecap=\"round\"/><rect x=\"35\" y=\"70\" width=\"50\" height=\"7\" rx=\"3\" fill=\"#ccc\"/><rect x=\"40\" y=\"77\" width=\"5\" height=\"18\" fill=\"#aaa\"/><rect x=\"75\" y=\"77\" width=\"5\" height=\"18\" fill=\"#aaa\"/><circle cx=\"60\" cy=\"50\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"57\" x2=\"60\" y2=\"70\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"53\" y1=\"55\" x2=\"30\" y2=\"55\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"67\" y1=\"55\" x2=\"90\" y2=\"55\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"30\" y1=\"30\" x2=\"30\" y2=\"55\" stroke=\"#ff6b35\" stroke-width=\"1.5\" stroke-dasharray=\"2,2\"/><line x1=\"90\" y1=\"30\" x2=\"90\" y2=\"55\" stroke=\"#ff6b35\" stroke-width=\"1.5\" stroke-dasharray=\"2,2\"/><line x1=\"28\" y1=\"55\" x2=\"92\" y2=\"55\" stroke=\"#666\" stroke-width=\"4\" stroke-linecap=\"round\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=lat+machine+presa+larga+tutorial+dorsali',
+        note:'<strong>Presa leggermente più larga delle spalle, palme in avanti.</strong> Porta la barra verso la parte alta del petto. Prima di tirare, spingi le scapole verso il basso. <em>Tip:</em> immagina di portare i gomiti verso i fianchi.' },
+      { name:'Rematore con bilanciere',
+        sets:4, reps:'8–10', rest:75,
+        muscles:'Dorsali, romboidi, deltoide posteriore, bicipiti',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><circle cx=\"35\" cy=\"30\" r=\"7\" fill=\"#333\"/><line x1=\"35\" y1=\"37\" x2=\"60\" y2=\"55\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"55\" x2=\"60\" y2=\"85\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"85\" x2=\"45\" y2=\"98\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"85\" x2=\"75\" y2=\"98\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"50\" y1=\"75\" x2=\"110\" y2=\"75\" stroke=\"#888\" stroke-width=\"4\"/><rect x=\"106\" y=\"69\" width=\"5\" height=\"14\" rx=\"2\" fill=\"#ff6b35\"/><rect x=\"45\" y=\"69\" width=\"5\" height=\"14\" rx=\"2\" fill=\"#ff6b35\"/><line x1=\"50\" y1=\"48\" x2=\"72\" y2=\"75\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><circle cx=\"35\" cy=\"30\" r=\"7\" fill=\"#333\"/><line x1=\"35\" y1=\"37\" x2=\"60\" y2=\"55\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"55\" x2=\"60\" y2=\"85\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"85\" x2=\"45\" y2=\"98\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"85\" x2=\"75\" y2=\"98\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"50\" y1=\"58\" x2=\"100\" y2=\"58\" stroke=\"#888\" stroke-width=\"4\"/><rect x=\"96\" y=\"52\" width=\"5\" height=\"14\" rx=\"2\" fill=\"#ff6b35\"/><rect x=\"45\" y=\"52\" width=\"5\" height=\"14\" rx=\"2\" fill=\"#ff6b35\"/><line x1=\"50\" y1=\"48\" x2=\"60\" y2=\"58\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=rematore+bilanciere+tecnica+tutorial',
+        note:'<strong>Busto inclinato 45°, schiena piatta.</strong> Porta il bilanciere verso l\'ombelico, gomiti vicini al corpo. <em>Tip:</em> tieni il collo neutro.' },
+      { name:'Alzate posteriori (Rear delt fly)',
+        sets:4, reps:'12–15', rest:45,
+        muscles:'Deltoide posteriore, romboidi',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><circle cx=\"30\" cy=\"28\" r=\"7\" fill=\"#333\"/><line x1=\"30\" y1=\"35\" x2=\"60\" y2=\"55\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"55\" x2=\"65\" y2=\"85\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"65\" y1=\"85\" x2=\"50\" y2=\"98\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"65\" y1=\"85\" x2=\"80\" y2=\"98\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"48\" y1=\"48\" x2=\"48\" y2=\"70\" stroke=\"#333\" stroke-width=\"2.5\"/><circle cx=\"48\" cy=\"72\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"68\" y1=\"48\" x2=\"68\" y2=\"70\" stroke=\"#333\" stroke-width=\"2.5\"/><circle cx=\"68\" cy=\"72\" r=\"5\" fill=\"#ff6b35\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><circle cx=\"30\" cy=\"28\" r=\"7\" fill=\"#333\"/><line x1=\"30\" y1=\"35\" x2=\"60\" y2=\"55\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"55\" x2=\"65\" y2=\"85\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"65\" y1=\"85\" x2=\"50\" y2=\"98\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"65\" y1=\"85\" x2=\"80\" y2=\"98\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"48\" y1=\"48\" x2=\"15\" y2=\"35\" stroke=\"#333\" stroke-width=\"2.5\"/><circle cx=\"13\" cy=\"34\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"68\" y1=\"48\" x2=\"105\" y2=\"35\" stroke=\"#333\" stroke-width=\"2.5\"/><circle cx=\"107\" cy=\"34\" r=\"5\" fill=\"#ff6b35\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=alzate+posteriori+rear+delt+fly+tutorial',
+        note:'<strong>Busto piegato a 90°.</strong> Porta i gomiti verso il soffitto. Peso leggero, fase negativa lenta. Fondamentale per le spalle 3D.' },
+      { name:'Curl bilanciere EZ',
+        sets:3, reps:'10–12', rest:60,
+        muscles:'Bicipite, brachiale anteriore',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><circle cx=\"60\" cy=\"18\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"25\" x2=\"60\" y2=\"60\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"60\" x2=\"45\" y2=\"82\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"60\" x2=\"75\" y2=\"82\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"30\" y1=\"68\" x2=\"90\" y2=\"68\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><rect x=\"25\" y=\"62\" width=\"5\" height=\"14\" rx=\"2\" fill=\"#ff6b35\"/><rect x=\"90\" y=\"62\" width=\"5\" height=\"14\" rx=\"2\" fill=\"#ff6b35\"/><line x1=\"53\" y1=\"38\" x2=\"45\" y2=\"68\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"67\" y1=\"38\" x2=\"75\" y2=\"68\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><circle cx=\"60\" cy=\"18\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"25\" x2=\"60\" y2=\"60\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"60\" x2=\"45\" y2=\"82\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"60\" x2=\"75\" y2=\"82\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"30\" y1=\"38\" x2=\"90\" y2=\"38\" stroke=\"#888\" stroke-width=\"4\" stroke-linecap=\"round\"/><rect x=\"25\" y=\"32\" width=\"5\" height=\"14\" rx=\"2\" fill=\"#ff6b35\"/><rect x=\"90\" y=\"32\" width=\"5\" height=\"14\" rx=\"2\" fill=\"#ff6b35\"/><line x1=\"53\" y1=\"38\" x2=\"45\" y2=\"38\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"67\" y1=\"38\" x2=\"75\" y2=\"38\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=curl+bilanciere+EZ+bicipiti+tutorial',
+        note:'<strong>Gomiti fissi ai fianchi.</strong> Fase negativa 3 secondi. <em>Tip:</em> supina i polsi salendo per massimizzare la contrazione. Niente dondolio.' },
+      { name:'Curl a martello con manubri',
+        sets:3, reps:'10–12', rest:45,
+        muscles:'Brachioradiale, brachiale, bicipite (capo lungo)',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><circle cx=\"60\" cy=\"18\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"25\" x2=\"60\" y2=\"60\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"60\" x2=\"45\" y2=\"82\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"60\" x2=\"75\" y2=\"82\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"42\" y1=\"55\" x2=\"42\" y2=\"72\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"42\" cy=\"53\" r=\"5\" fill=\"#ff6b35\"/><circle cx=\"42\" cy=\"74\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"78\" y1=\"55\" x2=\"78\" y2=\"72\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"78\" cy=\"53\" r=\"5\" fill=\"#ff6b35\"/><circle cx=\"78\" cy=\"74\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"53\" y1=\"38\" x2=\"42\" y2=\"55\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"67\" y1=\"38\" x2=\"78\" y2=\"55\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><circle cx=\"60\" cy=\"18\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"25\" x2=\"60\" y2=\"60\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"60\" x2=\"45\" y2=\"82\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"60\" x2=\"75\" y2=\"82\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"38\" y1=\"32\" x2=\"38\" y2=\"49\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"38\" cy=\"30\" r=\"5\" fill=\"#ff6b35\"/><circle cx=\"38\" cy=\"51\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"82\" y1=\"32\" x2=\"82\" y2=\"49\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"82\" cy=\"30\" r=\"5\" fill=\"#ff6b35\"/><circle cx=\"82\" cy=\"51\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"53\" y1=\"38\" x2=\"38\" y2=\"40\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"67\" y1=\"38\" x2=\"82\" y2=\"40\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=curl+martello+manubri+tutorial+bicipiti',
+        note:'<strong>Presa neutra per tutta la durata.</strong> Ottimo per lo spessore del braccio. Alterna le braccia o falle insieme.' },
+      { name:'Pull-over con manubrio',
+        sets:3, reps:'12–15', rest:60,
+        muscles:'Gran dorsale, pettorale (lungo), serrato',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><rect x=\"30\" y=\"55\" width=\"60\" height=\"7\" rx=\"3\" fill=\"#ccc\"/><rect x=\"35\" y=\"62\" width=\"5\" height=\"20\" fill=\"#aaa\"/><rect x=\"80\" y=\"62\" width=\"5\" height=\"20\" fill=\"#aaa\"/><circle cx=\"18\" cy=\"48\" r=\"7\" fill=\"#333\"/><line x1=\"25\" y1=\"48\" x2=\"60\" y2=\"52\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"52\" x2=\"90\" y2=\"55\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"52\" y1=\"32\" x2=\"68\" y2=\"32\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"50\" cy=\"32\" r=\"5\" fill=\"#ff6b35\"/><circle cx=\"70\" cy=\"32\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"35\" y1=\"50\" x2=\"52\" y2=\"32\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"35\" y1=\"50\" x2=\"68\" y2=\"32\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><rect x=\"30\" y=\"55\" width=\"60\" height=\"7\" rx=\"3\" fill=\"#ccc\"/><rect x=\"35\" y=\"62\" width=\"5\" height=\"20\" fill=\"#aaa\"/><rect x=\"80\" y=\"62\" width=\"5\" height=\"20\" fill=\"#aaa\"/><circle cx=\"18\" cy=\"48\" r=\"7\" fill=\"#333\"/><line x1=\"25\" y1=\"48\" x2=\"60\" y2=\"52\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"52\" x2=\"90\" y2=\"55\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"8\" y1=\"15\" x2=\"24\" y2=\"15\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"6\" cy=\"15\" r=\"5\" fill=\"#ff6b35\"/><circle cx=\"26\" cy=\"15\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"35\" y1=\"50\" x2=\"10\" y2=\"15\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"35\" y1=\"50\" x2=\"25\" y2=\"15\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=pull+over+manubrio+tutorial+dorsali',
+        note:'<strong>Sdraiato traversale sul banco.</strong> Manubrio sopra il petto, abbassalo in arco dietro la testa con gomiti leggermente piegati.' },
+    ],
+    core:[
+      { name:'Hollow Body Hold',
+        sets:3, reps:'25–35 secondi', rest:40,
+        muscles:'Retto addominale, trasverso, flessori anca',
+        imgs:["",""], yt:'https://www.youtube.com/results?search_query=hollow+body+hold+core+tutorial',
+        note:'<strong>Sdraiato, schiena piatta al suolo, braccia dietro la testa e gambe a ~30cm.</strong> Tieni la posizione. Se cedi in lordosi, alza le gambe. Tensione continua — niente momenti di riposo.' },
+      { name:'Russian Twist con peso',
+        sets:3, reps:'15 per lato', rest:40,
+        muscles:'Obliqui, trasverso, retto addominale',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><line x1=\"10\" y1=\"95\" x2=\"110\" y2=\"95\" stroke=\"#ddd\" stroke-width=\"2\"/><circle cx=\"60\" cy=\"40\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"47\" x2=\"60\" y2=\"72\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"72\" x2=\"35\" y2=\"88\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"72\" x2=\"85\" y2=\"88\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"55\" x2=\"88\" y2=\"62\" stroke=\"#333\" stroke-width=\"2.5\"/><circle cx=\"91\" cy=\"62\" r=\"8\" fill=\"#ff6b35\" opacity=\"0.8\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><line x1=\"10\" y1=\"95\" x2=\"110\" y2=\"95\" stroke=\"#ddd\" stroke-width=\"2\"/><circle cx=\"60\" cy=\"40\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"47\" x2=\"60\" y2=\"72\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"72\" x2=\"35\" y2=\"88\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"72\" x2=\"85\" y2=\"88\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"55\" x2=\"32\" y2=\"62\" stroke=\"#333\" stroke-width=\"2.5\"/><circle cx=\"29\" cy=\"62\" r=\"8\" fill=\"#ff6b35\" opacity=\"0.8\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=russian+twist+obliqui+tutorial',
+        note:'<strong>Seduto con gambe sollevate.</strong> Tieni un manubrio e ruota il busto da lato a lato toccando il suolo. La rotazione viene dal busto, non dalle braccia.' },
+      { name:'Mountain Climber (lento)',
+        sets:3, reps:'30 secondi', rest:35,
+        muscles:'Core completo, obliqui, spalle',
+        imgs:["",""], yt:'https://www.youtube.com/results?search_query=mountain+climber+lento+core+tutorial',
+        note:'<strong>In posizione plank su mani.</strong> Porta un ginocchio al petto lentamente poi cambia. <em>Tip:</em> non alzare il sedere. Lento = core puro. Veloce = HIIT.' },
+    ],
+    hiit:'5 round × (40s salto della corda o jumping jack / 20s riposo). Oppure 10 min bici: 1 min veloce / 1 min lento.'
+  },
+
+  LEGS:{
+    id:'legs', name:'Legs + Core — Gambe, Glutei, Addome', icon:'🦵', tag:'legs',
+    focus:'Quadricipiti · Glutei · Core Intenso',
+    exercises:[
+      { name:'Leg Press',
+        sets:4, reps:'12–15', rest:75,
+        muscles:'Quadricipiti, glutei, femorali',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><rect x=\"5\" y=\"5\" width=\"15\" height=\"90\" rx=\"3\" fill=\"#bbb\"/><line x1=\"20\" y1=\"25\" x2=\"80\" y2=\"60\" stroke=\"#aaa\" stroke-width=\"6\" stroke-linecap=\"round\"/><rect x=\"70\" y=\"55\" width=\"45\" height=\"10\" rx=\"3\" fill=\"#ccc\"/><rect x=\"100\" y=\"65\" width=\"10\" height=\"30\" rx=\"3\" fill=\"#aaa\"/><circle cx=\"95\" cy=\"42\" r=\"7\" fill=\"#333\"/><line x1=\"95\" y1=\"49\" x2=\"88\" y2=\"65\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"88\" y1=\"65\" x2=\"55\" y2=\"50\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"88\" y1=\"65\" x2=\"55\" y2=\"62\" stroke=\"#333\" stroke-width=\"3\"/><rect x=\"20\" y=\"48\" width=\"35\" height=\"20\" rx=\"4\" fill=\"#aaa\" opacity=\"0.7\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><rect x=\"5\" y=\"5\" width=\"15\" height=\"90\" rx=\"3\" fill=\"#bbb\"/><line x1=\"20\" y1=\"25\" x2=\"80\" y2=\"60\" stroke=\"#aaa\" stroke-width=\"6\" stroke-linecap=\"round\"/><rect x=\"70\" y=\"55\" width=\"45\" height=\"10\" rx=\"3\" fill=\"#ccc\"/><rect x=\"100\" y=\"65\" width=\"10\" height=\"30\" rx=\"3\" fill=\"#aaa\"/><circle cx=\"95\" cy=\"42\" r=\"7\" fill=\"#333\"/><line x1=\"95\" y1=\"49\" x2=\"88\" y2=\"65\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"88\" y1=\"65\" x2=\"32\" y2=\"28\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"88\" y1=\"65\" x2=\"32\" y2=\"38\" stroke=\"#333\" stroke-width=\"3\"/><rect x=\"20\" y=\"25\" width=\"35\" height=\"20\" rx=\"4\" fill=\"#ff6b35\" opacity=\"0.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=leg+press+tecnica+tutorial+gambe',
+        note:'<strong>Piedi alla larghezza delle spalle, a metà piattaforma.</strong> Non bloccare le ginocchia in estensione. <em>Tip:</em> piedi alti = più glutei e femorali. Piedi bassi = più quadricipiti.' },
+      { name:'Goblet Squat con manubrio',
+        sets:3, reps:'12–15', rest:60,
+        muscles:'Quadricipiti, glutei, core, mobilità',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><circle cx=\"60\" cy=\"15\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"22\" x2=\"60\" y2=\"55\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"48\" y1=\"38\" x2=\"72\" y2=\"38\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"46\" cy=\"38\" r=\"5\" fill=\"#ff6b35\"/><circle cx=\"74\" cy=\"38\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"60\" y1=\"55\" x2=\"48\" y2=\"90\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"55\" x2=\"72\" y2=\"90\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"48\" y1=\"90\" x2=\"38\" y2=\"90\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"72\" y1=\"90\" x2=\"82\" y2=\"90\" stroke=\"#333\" stroke-width=\"3\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><circle cx=\"60\" cy=\"28\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"35\" x2=\"60\" y2=\"62\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"48\" y1=\"50\" x2=\"72\" y2=\"50\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"46\" cy=\"50\" r=\"5\" fill=\"#ff6b35\"/><circle cx=\"74\" cy=\"50\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"60\" y1=\"62\" x2=\"30\" y2=\"75\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"62\" x2=\"90\" y2=\"75\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"30\" y1=\"75\" x2=\"25\" y2=\"95\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"90\" y1=\"75\" x2=\"95\" y2=\"95\" stroke=\"#333\" stroke-width=\"3\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=goblet+squat+manubrio+tutorial',
+        note:'<strong>Manubrio verticale davanti al petto.</strong> Piedi più larghi delle spalle, punte ruotate fuori 30°. Il peso davanti aiuta naturalmente il busto eretto. Nessuno stress assiale sulla schiena.' },
+      { name:'Romanian Deadlift con bilanciere',
+        sets:3, reps:'10–12', rest:75,
+        muscles:'Femorali, glutei, lombari',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><circle cx=\"60\" cy=\"15\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"22\" x2=\"60\" y2=\"60\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"60\" x2=\"45\" y2=\"98\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"60\" x2=\"75\" y2=\"98\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"25\" y1=\"55\" x2=\"95\" y2=\"55\" stroke=\"#888\" stroke-width=\"4\"/><rect x=\"20\" y=\"49\" width=\"5\" height=\"14\" rx=\"2\" fill=\"#ff6b35\"/><rect x=\"95\" y=\"49\" width=\"5\" height=\"14\" rx=\"2\" fill=\"#ff6b35\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><circle cx=\"28\" cy=\"30\" r=\"7\" fill=\"#333\"/><line x1=\"28\" y1=\"37\" x2=\"65\" y2=\"55\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"65\" y1=\"55\" x2=\"65\" y2=\"95\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"65\" y1=\"95\" x2=\"50\" y2=\"98\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"65\" y1=\"95\" x2=\"80\" y2=\"98\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"25\" y1=\"72\" x2=\"95\" y2=\"72\" stroke=\"#888\" stroke-width=\"4\"/><rect x=\"20\" y=\"66\" width=\"5\" height=\"14\" rx=\"2\" fill=\"#ff6b35\"/><rect x=\"95\" y=\"66\" width=\"5\" height=\"14\" rx=\"2\" fill=\"#ff6b35\"/><line x1=\"40\" y1=\"48\" x2=\"42\" y2=\"72\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=romanian+deadlift+tutorial+femorali',
+        note:'<strong>Spingi il bacino indietro</strong> abbassando il bilanciere lungo le gambe finché senti lo stretch nei femorali. Schiena sempre piatta.' },
+      { name:'Affondi bulgari con manubri',
+        sets:3, reps:'10 per lato', rest:60,
+        muscles:'Quadricipiti, glutei, femorali, equilibrio',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><rect x=\"75\" y=\"62\" width=\"40\" height=\"7\" rx=\"3\" fill=\"#ccc\"/><rect x=\"80\" y=\"69\" width=\"5\" height=\"20\" fill=\"#aaa\"/><rect x=\"105\" y=\"69\" width=\"5\" height=\"20\" fill=\"#aaa\"/><circle cx=\"50\" cy=\"18\" r=\"7\" fill=\"#333\"/><line x1=\"50\" y1=\"25\" x2=\"50\" y2=\"60\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"50\" y1=\"60\" x2=\"30\" y2=\"98\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"50\" y1=\"60\" x2=\"75\" y2=\"62\" stroke=\"#333\" stroke-width=\"3\"/><circle cx=\"38\" cy=\"36\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"38\" y1=\"36\" x2=\"38\" y2=\"55\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"38\" cy=\"57\" r=\"5\" fill=\"#ff6b35\"/><circle cx=\"62\" cy=\"36\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"62\" y1=\"36\" x2=\"62\" y2=\"55\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"62\" cy=\"57\" r=\"5\" fill=\"#ff6b35\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><rect x=\"75\" y=\"62\" width=\"40\" height=\"7\" rx=\"3\" fill=\"#ccc\"/><rect x=\"80\" y=\"69\" width=\"5\" height=\"20\" fill=\"#aaa\"/><rect x=\"105\" y=\"69\" width=\"5\" height=\"20\" fill=\"#aaa\"/><circle cx=\"45\" cy=\"30\" r=\"7\" fill=\"#333\"/><line x1=\"45\" y1=\"37\" x2=\"45\" y2=\"68\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"45\" y1=\"68\" x2=\"25\" y2=\"78\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"25\" y1=\"78\" x2=\"20\" y2=\"98\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"45\" y1=\"68\" x2=\"72\" y2=\"62\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"72\" y1=\"62\" x2=\"72\" y2=\"90\" stroke=\"#333\" stroke-width=\"2.5\"/><circle cx=\"72\" cy=\"92\" r=\"4\" fill=\"#ff6b35\" opacity=\"0.6\"/><circle cx=\"33\" cy=\"46\" r=\"5\" fill=\"#ff6b35\"/><line x1=\"33\" y1=\"46\" x2=\"33\" y2=\"65\" stroke=\"#888\" stroke-width=\"3\"/><circle cx=\"33\" cy=\"67\" r=\"5\" fill=\"#ff6b35\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=affondi+bulgari+split+squat+tutorial',
+        note:'<strong>Piede posteriore su panca, piede anteriore avanzato.</strong> Scendi finché il ginocchio posteriore sfiora il pavimento. Inizia senza manubri per prendere confidenza.' },
+    ],
+    core:[
+      { name:'Crunch inversi su panca',
+        sets:4, reps:'15', rest:40,
+        muscles:'Retto addominale inferiore, flessori anca',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><rect x=\"10\" y=\"58\" width=\"100\" height=\"7\" rx=\"3\" fill=\"#ccc\"/><rect x=\"18\" y=\"65\" width=\"5\" height=\"20\" fill=\"#aaa\"/><rect x=\"97\" y=\"65\" width=\"5\" height=\"20\" fill=\"#aaa\"/><circle cx=\"85\" cy=\"45\" r=\"7\" fill=\"#333\"/><line x1=\"85\" y1=\"52\" x2=\"30\" y2=\"58\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"45\" y1=\"58\" x2=\"45\" y2=\"25\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"58\" x2=\"60\" y2=\"25\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"45\" y1=\"25\" x2=\"60\" y2=\"25\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><rect x=\"10\" y=\"58\" width=\"100\" height=\"7\" rx=\"3\" fill=\"#ccc\"/><rect x=\"18\" y=\"65\" width=\"5\" height=\"20\" fill=\"#aaa\"/><rect x=\"97\" y=\"65\" width=\"5\" height=\"20\" fill=\"#aaa\"/><circle cx=\"85\" cy=\"45\" r=\"7\" fill=\"#333\"/><line x1=\"85\" y1=\"52\" x2=\"55\" y2=\"50\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"55\" y1=\"50\" x2=\"42\" y2=\"20\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"55\" y1=\"50\" x2=\"55\" y2=\"20\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"42\" y1=\"20\" x2=\"55\" y2=\"20\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=crunch+inversi+panca+addome+basso+tutorial',
+        note:'<strong>Sdraiato sul banco, gambe a 90°.</strong> Porta le ginocchia al petto sollevando il bacino. Abbassa in 3 secondi. Attacca la parte bassa della pancia, la più difficile.' },
+      { name:'Ab Wheel (rollout)',
+        sets:3, reps:'8–10', rest:50,
+        muscles:'Retto addominale, trasverso, dorsali, spalle',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><line x1=\"10\" y1=\"95\" x2=\"110\" y2=\"95\" stroke=\"#ddd\" stroke-width=\"2\"/><circle cx=\"80\" cy=\"30\" r=\"7\" fill=\"#333\"/><line x1=\"80\" y1=\"37\" x2=\"80\" y2=\"65\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"80\" y1=\"65\" x2=\"70\" y2=\"82\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"80\" y1=\"65\" x2=\"90\" y2=\"82\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"72\" y1=\"50\" x2=\"45\" y2=\"75\" stroke=\"#333\" stroke-width=\"2.5\"/><circle cx=\"42\" cy=\"80\" r=\"10\" fill=\"none\" stroke=\"#888\" stroke-width=\"3\"/><line x1=\"32\" y1=\"80\" x2=\"52\" y2=\"80\" stroke=\"#ff6b35\" stroke-width=\"3\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><line x1=\"10\" y1=\"95\" x2=\"110\" y2=\"95\" stroke=\"#ddd\" stroke-width=\"2\"/><circle cx=\"95\" cy=\"25\" r=\"7\" fill=\"#333\"/><line x1=\"95\" y1=\"32\" x2=\"75\" y2=\"55\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"75\" y1=\"55\" x2=\"72\" y2=\"82\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"75\" y1=\"55\" x2=\"82\" y2=\"82\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"78\" y1=\"45\" x2=\"25\" y2=\"58\" stroke=\"#333\" stroke-width=\"2.5\"/><circle cx=\"22\" cy=\"65\" r=\"10\" fill=\"none\" stroke=\"#888\" stroke-width=\"3\"/><line x1=\"12\" y1=\"65\" x2=\"32\" y2=\"65\" stroke=\"#ff6b35\" stroke-width=\"3\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=ab+wheel+rollout+tutorial+addome',
+        note:'<strong>In ginocchio, ruota in avanti mantenendo la schiena piatta.</strong> Torna indietro contraendo il core. Inizia con piccoli movimenti. <em>Alternativa:</em> usa un bilanciere.' },
+      { name:'Leg Raise appeso alla sbarra',
+        sets:3, reps:'12', rest:45,
+        muscles:'Retto addominale inferiore, obliqui, flessori anca',
+        imgs:["<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><line x1=\"10\" y1=\"8\" x2=\"110\" y2=\"8\" stroke=\"#888\" stroke-width=\"5\" stroke-linecap=\"round\"/><rect x=\"8\" y=\"3\" width=\"8\" height=\"30\" rx=\"3\" fill=\"#aaa\"/><rect x=\"104\" y=\"3\" width=\"8\" height=\"30\" rx=\"3\" fill=\"#aaa\"/><circle cx=\"60\" cy=\"25\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"32\" x2=\"60\" y2=\"68\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"68\" x2=\"48\" y2=\"98\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"68\" x2=\"72\" y2=\"98\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"52\" y1=\"32\" x2=\"40\" y2=\"8\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"68\" y1=\"32\" x2=\"80\" y2=\"8\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Inizio</text></svg>","<svg viewBox=\"0 0 120 100\" xmlns=\"http://www.w3.org/2000/svg\" style=\"width:100%;height:auto;max-height:115px\"><rect width=\"120\" height=\"100\" fill=\"white\"/><line x1=\"10\" y1=\"8\" x2=\"110\" y2=\"8\" stroke=\"#888\" stroke-width=\"5\" stroke-linecap=\"round\"/><rect x=\"8\" y=\"3\" width=\"8\" height=\"30\" rx=\"3\" fill=\"#aaa\"/><rect x=\"104\" y=\"3\" width=\"8\" height=\"30\" rx=\"3\" fill=\"#aaa\"/><circle cx=\"60\" cy=\"25\" r=\"7\" fill=\"#333\"/><line x1=\"60\" y1=\"32\" x2=\"60\" y2=\"55\" stroke=\"#333\" stroke-width=\"3.5\"/><line x1=\"60\" y1=\"55\" x2=\"25\" y2=\"55\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"60\" y1=\"55\" x2=\"95\" y2=\"55\" stroke=\"#333\" stroke-width=\"3\"/><line x1=\"52\" y1=\"32\" x2=\"40\" y2=\"8\" stroke=\"#333\" stroke-width=\"2.5\"/><line x1=\"68\" y1=\"32\" x2=\"80\" y2=\"8\" stroke=\"#333\" stroke-width=\"2.5\"/><text x=\"60\" y=\"96\" text-anchor=\"middle\" font-size=\"8\" fill=\"#aaa\" font-family=\"sans-serif\">Fine</text></svg>"],
+        yt:'https://www.youtube.com/results?search_query=leg+raise+sbarra+addome+tutorial',
+        note:'<strong>Appeso alla sbarra, solleva le gambe tese fino a 90°.</strong> Fase negativa controllata. <em>Alternativa più facile:</em> leg raise sdraiato sul banco con le mani sotto i glutei.' },
+      { name:'Plank con alzata gamba alternata',
+        sets:3, reps:'12 per lato', rest:40,
+        muscles:'Core, glutei, stabilità lombare',
+        imgs:["",""], yt:'https://www.youtube.com/results?search_query=plank+leg+lift+alternato+core+tutorial',
+        note:'<strong>In plank su avambracci.</strong> Alza una gamba tesa per 2 secondi mantenendo i fianchi paralleli al suolo. Non lasciare ruotare il bacino.' },
+    ],
+    hiit:'4 round × (30s squat jump / 15s riposo / 30s step-up su panca / 15s riposo). ~6 min. Le gambe sono i muscoli più grandi — il loro HIIT brucia più calorie di qualsiasi altro.'
+  }
+};
+</script>
+<script>
+
+const WEEK_PATTERNS = [
+  ['PUSH','PULL','LEGS'],['PUSH','PULL','LEGS'],
+  ['PUSH','PULL','LEGS'],['PUSH','PULL','LEGS'],['PUSH','PULL','LEGS']
+];
+const DAY_NAMES = ['Giorno A','Giorno B','Giorno C'];
+const WEEKS = 5;
+const CIRC = 2 * Math.PI * 56;
+
+// ── STATE ──
+var state = {};
+try { state = JSON.parse(localStorage.getItem('ppl_v6') || '{}'); } catch(e) {}
+var currentWeek = parseInt(localStorage.getItem('ppl_w6') || '0');
+var timerInt = null, timerTotal = 0, timerLeft = 0;
+var sessionTimers = {};
+var wakeLock = null, wakeVideo = null;
+
+function save() {
+  localStorage.setItem('ppl_v6', JSON.stringify(state));
+  localStorage.setItem('ppl_w6', String(currentWeek));
+}
+
+// ── KEY HELPERS ──
+function sk(w,d) { return 'sess_'+w+'_'+d; }
+function ek(w,d,t,i,s) { return 'e_'+w+'_'+d+'_'+t+'_'+i+'_'+s; }
+function lk(w,d,t,i,s,f) { return 'l_'+w+'_'+d+'_'+t+'_'+i+'_'+s+'_'+f; }
+
+// ── PROGRESS ──
+function countDone() {
+  var n = 0;
+  for (var w=0; w<WEEKS; w++)
+    for (var d=0; d<3; d++)
+      if (state[sk(w,d)] === 'done') n++;
+  return n;
+}
+function updateProgress() {
+  var done = countDone(), total = (WEEKS-1)*3;
+  document.getElementById('mpCount').textContent = done + ' / ' + total;
+  document.getElementById('mpBar').style.width = Math.round(done/total*100) + '%';
+}
+function seriesCount(w,d,prog) {
+  var total=0, done=0;
+  prog.exercises.forEach(function(ex,ei) {
+    for (var s=0; s<ex.sets; s++) { total++; if (state[ek(w,d,'e',ei,s)]==='1') done++; }
+  });
+  prog.core.forEach(function(ex,ci) {
+    for (var s=0; s<ex.sets; s++) { total++; if (state[ek(w,d,'c',ci,s)]==='1') done++; }
+  });
+  return {total:total, done:done};
+}
+
+// ── STREAK ──
+function getStreak() {
+  var today = new Date().toDateString();
+  var last = localStorage.getItem('streak_last') || '';
+  var cnt = parseInt(localStorage.getItem('streak_cnt') || '0');
+  if (last === today) return cnt;
+  var yest = new Date(Date.now()-864e5).toDateString();
+  return last === yest ? cnt : 0;
+}
+function bumpStreak() {
+  var today = new Date().toDateString();
+  var last = localStorage.getItem('streak_last') || '';
+  var cnt = parseInt(localStorage.getItem('streak_cnt') || '0');
+  if (last === today) return;
+  var yest = new Date(Date.now()-864e5).toDateString();
+  var newCnt = last === yest ? cnt+1 : 1;
+  localStorage.setItem('streak_last', today);
+  localStorage.setItem('streak_cnt', String(newCnt));
+}
+
+// ── PR ──
+function getPR(name) {
+  try { return JSON.parse(localStorage.getItem('pr_'+btoa(encodeURIComponent(name)).slice(0,20)) || 'null'); } catch(e) { return null; }
+}
+function setPR(name, kg, rip) {
+  localStorage.setItem('pr_'+btoa(encodeURIComponent(name)).slice(0,20), JSON.stringify({kg:kg,rip:rip,date:new Date().toLocaleDateString('it-IT')}));
+}
+function checkPR(name, kg, rip) {
+  var kgN=parseFloat(kg), ripN=parseInt(rip);
+  if (!kgN||!ripN||isNaN(kgN)||isNaN(ripN)) return false;
+  var orm = kgN*(1+ripN/30);
+  var pr = getPR(name);
+  var prOrm = pr ? pr.kg*(1+pr.rip/30) : 0;
+  if (orm > prOrm) { setPR(name,kgN,ripN); return true; }
+  return false;
+}
+
+// ── PRE-FILL ──
+function getPrevLog(exName, sets) {
+  for (var w=WEEKS-1; w>=0; w--) {
+    for (var d=0; d<3; d++) {
+      var prog = PROGRAMS[WEEK_PATTERNS[w][d]];
+      var allEx = prog.exercises.concat(prog.core);
+      for (var ei=0; ei<allEx.length; ei++) {
+        if (allEx[ei].name !== exName) continue;
+        var t = ei < prog.exercises.length ? 'e' : 'c';
+        var ri = ei < prog.exercises.length ? ei : ei-prog.exercises.length;
+        var res = [];
+        var found = false;
+        for (var s=0; s<sets; s++) {
+          var kg = state[lk(w,d,t,ri,s,'kg')] || '';
+          var rp = state[lk(w,d,t,ri,s,'rip')] || '';
+          res.push({kg:kg,rip:rp});
+          if (kg) found = true;
+        }
+        if (found) return res;
+      }
+    }
+  }
+  return null;
+}
+
+// ── OVERLOAD ──
+function getSuggested(w,d,t,idx,ex) {
+  var allDone = true;
+  for (var s=0; s<ex.sets; s++) if (state[ek(w,d,t,idx,s)]!=='1') { allDone=false; break; }
+  if (!allDone) return null;
+  var kgs = [];
+  for (var s=0; s<ex.sets; s++) {
+    var k = parseFloat(state[lk(w,d,t,idx,s,'kg')]||'0');
+    if (k>0) kgs.push(k);
+  }
+  if (!kgs.length) return null;
+  var avg = kgs.reduce(function(a,b){return a+b;},0)/kgs.length;
+  return Math.round((avg+2.5)*2)/2;
+}
+
+// ── TONNELLAGGIO ──
+function calcTons(w,d,prog) {
+  var tons=0;
+  prog.exercises.forEach(function(ex,ei) {
+    for (var s=0;s<ex.sets;s++) {
+      var kg=parseFloat(state[lk(w,d,'e',ei,s,'kg')]||'0');
+      var rp=parseInt(state[lk(w,d,'e',ei,s,'rip')]||'0');
+      if (kg&&rp) tons+=kg*rp;
+    }
+  });
+  prog.core.forEach(function(ex,ci) {
+    for (var s=0;s<ex.sets;s++) {
+      var kg=parseFloat(state[lk(w,d,'c',ci,s,'kg')]||'0');
+      var rp=parseInt(state[lk(w,d,'c',ci,s,'rip')]||'0');
+      if (kg&&rp) tons+=kg*rp;
+    }
+  });
+  return Math.round(tons);
+}
+
+// ── CHART ──
+function buildChart(exName) {
+  var byWeek = {};
+  for (var w=0;w<WEEKS;w++) {
+    for (var d=0;d<3;d++) {
+      var prog = PROGRAMS[WEEK_PATTERNS[w][d]];
+      var allEx = prog.exercises.concat(prog.core);
+      for (var ei=0;ei<allEx.length;ei++) {
+        if (allEx[ei].name!==exName) continue;
+        var t=ei<prog.exercises.length?'e':'c';
+        var ri=ei<prog.exercises.length?ei:ei-prog.exercises.length;
+        for (var s=0;s<allEx[ei].sets;s++) {
+          var kg=parseFloat(state[lk(w,d,t,ri,s,'kg')]||'0');
+          if (kg>0 && (!byWeek[w]||kg>byWeek[w])) byWeek[w]=kg;
+        }
+      }
+    }
+  }
+  var data=Object.keys(byWeek).map(function(k){return {w:parseInt(k),kg:byWeek[k]};}).sort(function(a,b){return a.w-b.w;});
+  if (data.length<2) return '';
+  var maxKg=data.reduce(function(m,d){return Math.max(m,d.kg);},0);
+  var minKg=data.reduce(function(m,d){return Math.min(m,d.kg);},maxKg);
+  var range=maxKg-minKg||1;
+  var W=200,H=50;
+  var lastKg=data[data.length-1].kg;
+  var pts='', circles='';
+  for (var i=0;i<data.length;i++) {
+    var x=data.length>1?i/(data.length-1)*(W-20)+10:W/2;
+    var y=H-8-((data[i].kg-minKg)/range)*(H-16);
+    pts+=(i>0?' ':'')+x+','+y;
+    circles+='<circle cx="'+x+'" cy="'+y+'" r="3" fill="#007aff"/>';
+  }
+  return '<div class="chart-wrap">'
+    +'<div class="chart-lbl"><span>Progressione pesi</span><span class="chart-val">'+lastKg+'kg</span></div>'
+    +'<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;height:50px;overflow:visible">'
+    +'<polyline points="'+pts+'" fill="none" stroke="#007aff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>'
+    +circles+'</svg></div>';
+}
+
+// ── RPE OPTIONS ──
+function rpeOptions(val) {
+  var vals=[6,6.5,7,7.5,8,8.5,9,9.5,10];
+  var html='<option value="">RPE</option>';
+  for (var i=0;i<vals.length;i++) {
+    html+='<option value="'+vals[i]+'"'+(val==vals[i]?' selected':'')+'>'+vals[i]+'</option>';
+  }
+  return html;
+}
+
+// ── WEEK NAV ──
+function renderWeekNav() {
+  var el=document.getElementById('weekNav'); el.innerHTML='';
+  for (var w=0;w<WEEKS;w++) {
+    var btn=document.createElement('button');
+    btn.className='wbtn'+(w===currentWeek?' active':'');
+    btn.textContent='Settimana '+(w+1)+(w===4?' 🔄':'');
+    btn.onclick=(function(ww){return function(){currentWeek=ww;save();renderWeekNav();renderWeek();};})(w);
+    el.appendChild(btn);
+  }
+}
+
+// ── RENDER WEEK ──
+function renderWeek() {
+  var el=document.getElementById('homePage'); el.innerHTML='';
+  var pat=WEEK_PATTERNS[currentWeek];
+  var wDone=0;
+  for (var d=0;d<3;d++) if (state[sk(currentWeek,d)]==='done') wDone++;
+  var totalEx=pat.reduce(function(a,p){return a+PROGRAMS[p].exercises.length+PROGRAMS[p].core.length;},0);
+
+  // Stats
+  var stats=document.createElement('div'); stats.className='stats-row';
+  stats.innerHTML='<div class="stat-c"><div class="stat-v">'+wDone+'/3</div><div class="stat-l">Sessioni</div></div>'
+    +'<div class="stat-c"><div class="stat-v">'+totalEx+'</div><div class="stat-l">Esercizi</div></div>'
+    +'<div class="stat-c"><div class="stat-v">PPL</div><div class="stat-l">Schema</div></div>';
+  el.appendChild(stats);
+
+  // Streak
+  var streak=getStreak();
+  if (streak>=2) {
+    var sb=document.createElement('div'); sb.className='streak-banner';
+    sb.innerHTML='<span style="font-size:18px">🔥</span><span><strong>'+streak+' giorni di fila!</strong> Continua così</span>';
+    el.appendChild(sb);
+  }
+
+  // Deload label
+  var lbl=document.createElement('div'); lbl.className='sec-lbl';
+  lbl.innerHTML='Settimana '+(currentWeek+1)+(currentWeek===4?' <span class="deload-badge">Deload -40%</span>':'');
+  el.appendChild(lbl);
+
+  for (var d=0;d<3;d++) {
+    var prog=PROGRAMS[pat[d]];
+    el.appendChild(buildCard(currentWeek,d,prog,state[sk(currentWeek,d)]==='done'));
+  }
+  updateProgress();
+}
+
+// ── BUILD CARD ──
+function buildCard(w,d,prog,isDone) {
+  var card=document.createElement('div');
+  card.className='s-card'+(isDone?' done':'');
+  card.id='card-'+w+'-'+d;
+  var sc=seriesCount(w,d,prog);
+  var pct=sc.total>0?sc.done/sc.total:0;
+  var circ=2*Math.PI*14;
+  var offset=circ*(1-pct);
+
+  var ringOrCheck = isDone
+    ? '<span style="font-size:16px;color:var(--green)">✓</span>'
+    : '<svg class="s-ring" viewBox="0 0 36 36"><circle class="s-ring-bg" cx="18" cy="18" r="14"/><circle class="s-ring-fill '+prog.tag+'" cx="18" cy="18" r="14" stroke-dasharray="'+circ+'" stroke-dashoffset="'+offset+'" transform="rotate(-90 18 18)"/></svg>';
+
+  card.innerHTML = '<div class="s-head" onclick="toggleCard('+w+','+d+')">'
+    +'<div class="s-icon '+prog.tag+'">'+prog.icon+'</div>'
+    +'<div class="s-info">'
+      +'<div class="s-day"><span class="s-tag '+prog.tag+'">'+prog.tag.toUpperCase()+'</span> '+DAY_NAMES[d]+'</div>'
+      +'<div class="s-name">'+prog.name+'</div>'
+      +'<div class="s-meta" id="meta-'+w+'-'+d+'">'+sc.done+'/'+sc.total+' serie completate</div>'
+    +'</div>'
+    +'<div class="s-right">'+ringOrCheck+'<span class="chevron">⌄</span></div>'
+  +'</div>'
+  +'<div class="ex-list" id="exlist-'+w+'-'+d+'">'
+    +'<div class="session-timer">'
+      +'<div class="timer-dot"></div>'
+      +'<span style="flex:1">Tempo sessione</span>'
+      +'<span style="font-family:DM Mono,monospace;font-size:13px;font-weight:600;color:var(--accent)" id="stimer-'+w+'-'+d+'">'+fmtTime(getSElapsed(w,d))+'</span>'
+    +'</div>'
+    +'<div class="session-note-wrap">'
+      +'<div class="note-lbl">📝 Note sessione</div>'
+      +'<textarea class="note-input" placeholder="Come ti senti? Qualcosa da ricordare…" onchange="state[\'note_'+w+'_'+d+'\']=this.value;save()" oninput="this.style.height=\'auto\';this.style.height=this.scrollHeight+\'px\'">'+(state['note_'+w+'_'+d]||'')+'</textarea>'
+    +'</div>'
+    +prog.exercises.map(function(ex,ei){return buildEx(w,d,ex,ei,'e',false);}).join('')
+    +'<div class="core-hdr"><div class="core-dot"></div><span class="core-txt">Core Anti-Pancia</span></div>'
+    +prog.core.map(function(ex,ci){return buildEx(w,d,ex,ci,'c',true);}).join('')
+    +'<div class="ex-item"><div class="ex-top"><span class="ex-num" style="color:var(--green)">⚡</span>'
+      +'<div class="ex-body"><div class="ex-name-row"><span class="ex-name">HIIT Finale</span></div>'
+      +'<div class="ex-pills"><span class="pill">Alta intensità</span><span class="pill">~6 min</span></div></div></div>'
+      +'<div class="hiit-block"><strong>Come eseguire:</strong> '+prog.hiit+'</div></div>'
+    +'<button class="done-btn '+(isDone?'did':'todo')+'" onclick="completeSession('+w+','+d+')">'+( isDone?'✓ Sessione completata':'Segna come completata')+'</button>'
+  +'</div>';
+  return card;
+}
+
+// ── BUILD EX ──
+function buildEx(w,d,ex,idx,t,isCore) {
+  var uid=w+'-'+d+'-'+t+'-'+idx;
+  var pr=getPR(ex.name);
+  var prBadge=pr?'<span class="pr-badge">🏆 '+pr.kg+'kg</span>':'';
+  var sugg=getSuggested(w,d,t,idx,ex);
+  var suggBadge=sugg?'<span class="suggest">💡 Prova '+sugg+'kg</span>':'';
+  var prev=getPrevLog(ex.name,ex.sets);
+
+  // Serie buttons
+  var sbs='';
+  for (var s=0;s<ex.sets;s++) {
+    var done=state[ek(w,d,t,idx,s)]==='1';
+    sbs+='<button class="sb'+(done?' done':'')+(isCore&&done?' core':'')+(isCore&&!done?' core-border':'')+'" id="sb-'+uid+'-'+s+'" onclick="toggleSerie('+w+','+d+','+idx+','+s+',\''+t+'\','+ex.rest+')">'+( s+1)+'</button>';
+  }
+  var restBtn=ex.rest>0?'<button class="rest-btn" onclick="startTimer('+ex.rest+')">⏱ '+ex.rest+'s</button>':'';
+
+  // Log rows
+  var logRows='';
+  for (var s=0;s<ex.sets;s++) {
+    var kg=state[lk(w,d,t,idx,s,'kg')]||(prev&&prev[s]?prev[s].kg:'')||'';
+    var rp=state[lk(w,d,t,idx,s,'rip')]||(prev&&prev[s]?prev[s].rip:'')||'';
+    var rpe=state[lk(w,d,t,idx,s,'rpe')]||'';
+    var isPre=!state[lk(w,d,t,idx,s,'kg')]&&kg;
+    var rowDone=state[ek(w,d,t,idx,s)]==='1';
+    logRows+='<div class="log-row'+(rowDone?' done':'')+'" id="lrow-'+uid+'-'+s+'">'
+      +'<span class="log-num">'+(s+1)+'</span>'
+      +'<input class="log-input'+(isPre?' prefill':'')+'" type="number" inputmode="decimal" placeholder="kg" value="'+kg+'" onchange="saveLog(\''+uid+'\','+w+','+d+','+idx+',\''+t+'\','+s+',\'kg\',this.value)">'
+      +'<input class="log-input'+(isPre?' prefill':'')+'" type="number" inputmode="numeric" placeholder="rip." value="'+rp+'" onchange="saveLog(\''+uid+'\','+w+','+d+','+idx+',\''+t+'\','+s+',\'rip\',this.value)">'
+      +'<select class="rpe-sel" onchange="state[lk('+w+','+d+',\''+t+'\','+idx+','+s+',\'rpe\')]=this.value;save()">'+rpeOptions(rpe)+'</select>'
+    +'</div>';
+  }
+
+  var chart=buildChart(ex.name);
+
+  // SVG immagini
+  var svgPair=ex.imgs&&ex.imgs[0]&&ex.imgs[1];
+  var imgHtml=svgPair
+    ?'<div class="info-imgs"><div class="img-cell">'+ex.imgs[0]+'<span class="img-lbl">Inizio</span></div><div class="img-cell">'+ex.imgs[1]+'<span class="img-lbl">Fine</span></div></div>'
+    :'';
+  var ytHtml=ex.yt
+    ?'<a class="info-yt" href="'+ex.yt+'" target="_blank" rel="noopener"><div class="yt-icon">▶</div><span class="yt-txt">Tutorial su YouTube</span><span class="yt-arr">›</span></a>'
+    :'';
+  var noteHtml='<div class="info-note'+(isCore?' core':'')+'"><strong>Muscoli:</strong> '+ex.muscles+'<br><br>'+ex.note+'</div>';
+
+  return '<div class="ex-item'+(isCore?' core':'')+'" id="exitem-'+uid+'">'
+    +'<div class="ex-top">'
+      +'<span class="ex-num">'+(isCore?'◎':'0'+(idx+1))+'</span>'
+      +'<div class="ex-body">'
+        +'<div class="ex-name-row"><span class="ex-name">'+ex.name+'</span>'+prBadge+'</div>'
+        +'<div class="ex-pills"><span class="pill'+(isCore?' core':'')+'">'+ex.sets+' serie</span><span class="pill'+(isCore?' core':'')+'">'+ex.reps+'</span>'+(ex.rest>0?'<span class="pill">'+ex.rest+'s rec.</span>':'')+'</div>'
+        +suggBadge
+      +'</div>'
+      +'<button class="info-btn" onclick="toggleInfo(\'ip-'+uid+'\')">info ▾</button>'
+    +'</div>'
+    +'<div class="info-panel" id="ip-'+uid+'">'+imgHtml+ytHtml+noteHtml+'</div>'
+    +'<div class="series-row">'+sbs+restBtn+'<button class="log-btn" id="lb-'+uid+'" onclick="toggleLog(\'lp-'+uid+'\',\'lb-'+uid+'\')">📊 kg</button></div>'
+    +'<div class="log-panel" id="lp-'+uid+'"><div class="log-hdr"><span>S</span><span>Kg</span><span>Rip.</span><span>RPE</span></div>'+logRows+chart+'</div>'
+  +'</div>';
+}
+
+// ── SAVE LOG ──
+function saveLog(uid,w,d,idx,t,s,field,val) {
+  state[lk(w,d,t,idx,s,field)]=val;
+  save();
+  if (field==='kg'||field==='rip') {
+    var kg=state[lk(w,d,t,idx,s,'kg')];
+    var rp=state[lk(w,d,t,idx,s,'rip')];
+    if (checkPR(getExName(w,d,t,idx),kg,rp)) {
+      showPRFlash('exitem-'+uid);
+      if (navigator.vibrate) navigator.vibrate([100,50,200]);
+    }
+  }
+}
+function getExName(w,d,t,idx) {
+  var prog=PROGRAMS[WEEK_PATTERNS[w][d]];
+  return t==='e'?prog.exercises[idx].name:prog.core[idx].name;
+}
+function showPRFlash(itemId) {
+  var item=document.getElementById(itemId);
+  if (!item) return;
+  var f=document.createElement('div');
+  f.style.cssText='position:absolute;top:8px;right:12px;background:#ff9500;color:#fff;font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;z-index:10;animation:popIn .4s ease';
+  f.textContent='🏆 Nuovo PR!';
+  item.style.position='relative';
+  item.appendChild(f);
+  setTimeout(function(){f.remove();},2500);
+}
+
+// ── TOGGLE FUNCS ──
+function toggleCard(w,d) {
+  var card=document.getElementById('card-'+w+'-'+d);
+  var wasOpen=card.classList.contains('open');
+  card.classList.toggle('open');
+  if (!wasOpen) {
+    requestWakeLock();
+    startSTimer(w,d);
+  } else {
+    if (!document.querySelector('.s-card.open')) releaseWakeLock();
+    stopSTimer(w,d);
+  }
+}
+function toggleInfo(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+function toggleLog(panelId,btnId) {
+  var p=document.getElementById(panelId),b=document.getElementById(btnId);
+  p.classList.toggle('open');
+  b.classList.toggle('open');
+}
+function toggleSerie(w,d,idx,s,t,rest) {
+  var k=ek(w,d,t,idx,s);
+  var btn=document.getElementById('sb-'+w+'-'+d+'-'+t+'-'+idx+'-'+s);
+  var row=document.getElementById('lrow-'+w+'-'+d+'-'+t+'-'+idx+'-'+s);
+  if (state[k]==='1') {
+    state[k]='0'; btn.classList.remove('done');
+    if (row) row.classList.remove('done');
+  } else {
+    state[k]='1'; btn.classList.add('done');
+    if (row) row.classList.add('done');
+    btn.classList.add('pop');
+    setTimeout(function(){btn.classList.remove('pop');},400);
+    if (rest>0) startTimer(rest);
+  }
+  save();
+  refreshMeta(w,d);
+  updateRing(w,d);
+  checkShimmer(w,d);
+}
+function refreshMeta(w,d) {
+  var prog=PROGRAMS[WEEK_PATTERNS[currentWeek][d]];
+  var sc=seriesCount(w,d,prog);
+  var m=document.getElementById('meta-'+w+'-'+d);
+  if (m) m.textContent=sc.done+'/'+sc.total+' serie completate';
+}
+function updateRing(w,d) {
+  var prog=PROGRAMS[WEEK_PATTERNS[currentWeek][d]];
+  var sc=seriesCount(w,d,prog);
+  var pct=sc.total>0?sc.done/sc.total:0;
+  var circ=2*Math.PI*14;
+  var ring=document.querySelector('#card-'+w+'-'+d+' .s-ring-fill');
+  if (ring) ring.style.strokeDashoffset=circ*(1-pct);
+}
+function checkShimmer(w,d) {
+  var prog=PROGRAMS[WEEK_PATTERNS[currentWeek][d]];
+  var sc=seriesCount(w,d,prog);
+  var btn=document.querySelector('#card-'+w+'-'+d+' .done-btn');
+  if (btn&&sc.done===sc.total&&sc.total>0&&btn.classList.contains('todo')) {
+    btn.style.animation='shimmer 1.8s linear infinite';
+    setTimeout(function(){btn.style.animation='';},3000);
+  }
+}
+
+// ── COMPLETE SESSION ──
+function completeSession(w,d) {
+  var k=sk(w,d);
+  var wasDone=state[k]==='done';
+  state[k]=wasDone?'':'done';
+  save();
+  if (!wasDone) {
+    var btn=document.querySelector('#card-'+w+'-'+d+' .done-btn');
+    launchConfetti(btn);
+    bumpStreak();
+    var prog=PROGRAMS[WEEK_PATTERNS[currentWeek][d]];
+    setTimeout(function(){showSummary(w,d,prog);},600);
+  }
+  renderWeek();
+}
+
+// ── SUMMARY MODAL ──
+function showSummary(w,d,prog) {
+  var tons=calcTons(w,d,prog);
+  var sc=seriesCount(w,d,prog);
+  var pct=sc.total>0?Math.round(sc.done/sc.total*100):0;
+  var prevTons=0;
+  for (var pw=w-1;pw>=0;pw--) {
+    if (WEEK_PATTERNS[pw][d]===WEEK_PATTERNS[w][d]) { prevTons=calcTons(pw,d,prog); break; }
+  }
+  var diff=tons-prevTons;
+  var diffColor=diff>0?'#34c759':diff<0?'#ff3b30':'#8a8a96';
+  var diffStr=diff>0?'+'+diff+'kg':diff<0?diff+'kg':'=';
+  var streak=getStreak();
+  var modal=document.createElement('div');
+  modal.id='summary-modal';
+  modal.style.cssText='position:fixed;inset:0;z-index:500;background:rgba(0,0,0,.5);display:flex;align-items:flex-end';
+  modal.innerHTML='<div style="background:var(--card);border-radius:24px 24px 0 0;width:100%;padding:28px 24px 44px;box-shadow:0 -8px 32px rgba(0,0,0,.2)">'
+    +'<div style="width:36px;height:4px;background:var(--border2);border-radius:2px;margin:0 auto 24px"></div>'
+    +'<div style="font-size:22px;font-weight:700;letter-spacing:-.3px;margin-bottom:4px;color:var(--text)">Sessione completata! 🎉</div>'
+    +'<div style="font-size:13px;color:var(--muted);margin-bottom:20px">'+prog.name+'</div>'
+    +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px">'
+      +'<div style="background:var(--bg3);border-radius:14px;padding:14px;text-align:center"><div style="font-size:22px;font-weight:700;color:var(--text)">'+sc.done+'/'+sc.total+'</div><div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:3px">Serie</div></div>'
+      +'<div style="background:var(--bg3);border-radius:14px;padding:14px;text-align:center"><div style="font-size:22px;font-weight:700;color:var(--text)">'+(tons>0?tons+'kg':'—')+'</div><div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:3px">Tonnellaggio</div></div>'
+    +'</div>'
+    +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px">'
+      +'<div style="background:var(--bg3);border-radius:14px;padding:14px;text-align:center"><div style="font-size:22px;font-weight:700;color:'+diffColor+'">'+(prevTons>0?diffStr:'—')+'</div><div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:3px">vs Prec.</div></div>'
+      +'<div style="background:var(--bg3);border-radius:14px;padding:14px;text-align:center"><div style="font-size:22px;font-weight:700;color:var(--text)">'+fmtTime(getSElapsed(w,d))+'</div><div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:3px">Durata</div></div>'
+    +'</div>'
+    +(pct===100?'<div style="background:rgba(52,199,89,.1);border-radius:12px;padding:12px 14px;font-size:13px;color:#34c759;font-weight:500;margin-bottom:12px">✓ Tutte le serie completate!</div>':'')
+    +(streak>1?'<div style="background:rgba(255,149,0,.1);border-radius:12px;padding:12px 14px;font-size:13px;color:#ff9500;font-weight:500;margin-bottom:12px">🔥 '+streak+' giorni di streak!</div>':'')
+    +'<button onclick="document.getElementById(\'summary-modal\').remove()" style="width:100%;background:var(--accent);color:#fff;border:none;border-radius:14px;padding:15px;font-size:15px;font-weight:600;cursor:pointer">Ottimo lavoro! 💪</button>'
+  +'</div>';
+  modal.addEventListener('click',function(e){if(e.target===modal)modal.remove();});
+  document.body.appendChild(modal);
+}
+
+// ── CONFETTI ──
+function launchConfetti(originEl) {
+  var colors=['#ff3b30','#ff9500','#34c759','#007aff','#af52de','#ff2d55'];
+  var rect=originEl?originEl.getBoundingClientRect():{left:window.innerWidth/2,top:window.innerHeight/2,width:0};
+  var x=rect.left+(rect.width||0)/2;
+  for (var i=0;i<28;i++) {
+    var c=document.createElement('div');
+    c.className='confetto';
+    var w=6+Math.random()*6, h=6+Math.random()*6;
+    c.style.cssText='left:'+(x+(Math.random()-.5)*120)+'px;top:'+(rect.top-10)+'px;background:'+colors[Math.floor(Math.random()*colors.length)]+';animation-delay:'+Math.random()*.3+'s;animation-duration:'+(0.9+Math.random()*.5)+'s;width:'+w+'px;height:'+h+'px;border-radius:'+(Math.random()>.5?'50%':'2px');
+    document.body.appendChild(c);
+    setTimeout(function(el){el.remove();},1600,c);
+  }
+}
+
+// ── TOAST ──
+function showToast(msg) {
+  var old=document.getElementById('toast'); if(old) old.remove();
+  var t=document.createElement('div'); t.id='toast'; t.textContent=msg;
+  document.body.appendChild(t);
+  setTimeout(function(){t.style.opacity='0';},2000);
+  setTimeout(function(){t.remove();},2400);
+}
+
+// ── TIMER SESSIONE ──
+function fmtTime(s) {
+  var h=Math.floor(s/3600),m=Math.floor((s%3600)/60),ss=s%60;
+  if (h>0) return h+':'+pad(m)+':'+pad(ss);
+  return pad(m)+':'+pad(ss);
+}
+function pad(n){return n<10?'0'+n:String(n);}
+function getSElapsed(w,d) {
+  var k='stimer_'+w+'_'+d;
+  if (sessionTimers[k]) return Math.floor((Date.now()-sessionTimers[k].start)/1000);
+  return parseInt(localStorage.getItem(k)||'0');
+}
+function startSTimer(w,d) {
+  var k='stimer_'+w+'_'+d;
+  if (sessionTimers[k]) return;
+  var saved=parseInt(localStorage.getItem(k)||'0');
+  sessionTimers[k]={start:Date.now()-saved*1000,int:setInterval(function(){
+    var el=document.getElementById('stimer-'+w+'-'+d);
+    if (el) el.textContent=fmtTime(getSElapsed(w,d));
+  },1000)};
+}
+function stopSTimer(w,d) {
+  var k='stimer_'+w+'_'+d;
+  if (!sessionTimers[k]) return;
+  clearInterval(sessionTimers[k].int);
+  var elapsed=Math.floor((Date.now()-sessionTimers[k].start)/1000);
+  localStorage.setItem(k,elapsed);
+  delete sessionTimers[k];
+}
+
+// ── TIMER RECUPERO ──
+function startTimer(sec) {
+  stopTimer();
+  timerTotal=sec; timerLeft=sec;
+  var ring=document.getElementById('timerRing');
+  if (ring) { ring.style.transition='none'; ring.style.strokeDashoffset='0'; ring.className='ring-fill green'; requestAnimationFrame(function(){ring.style.transition='';});}
+  document.getElementById('timerOv').classList.add('show');
+  updateTimerUI();
+  timerInt=setInterval(function(){timerLeft--;updateTimerUI();if(timerLeft<=0)stopTimer();},1000);
+}
+function updateTimerUI() {
+  document.getElementById('timerVal').textContent=timerLeft;
+  var ring=document.getElementById('timerRing');
+  if (ring&&timerTotal>0) {
+    var pct=timerLeft/timerTotal;
+    ring.style.strokeDashoffset=CIRC*(1-pct);
+    ring.classList.remove('green','orange','red');
+    ring.classList.add(pct>0.5?'green':pct>0.2?'orange':'red');
+    if (timerLeft===3&&navigator.vibrate) navigator.vibrate([100,50,100]);
+    if (timerLeft===0&&navigator.vibrate) navigator.vibrate([100,80,100,80,300]);
+  }
+}
+function skipTimer(){stopTimer();}
+function stopTimer(){
+  if(timerInt){clearInterval(timerInt);timerInt=null;}
+  document.getElementById('timerOv').classList.remove('show');
+}
+
+// ── WAKE LOCK ──
+function requestWakeLock() {
+  if ('wakeLock' in navigator) {
+    navigator.wakeLock.request('screen').then(function(l){wakeLock=l;}).catch(function(){startVideoWL();});
+  } else { startVideoWL(); }
+}
+function startVideoWL() {
+  if (wakeVideo) return;
+  wakeVideo=document.createElement('video');
+  wakeVideo.setAttribute('playsinline',''); wakeVideo.setAttribute('muted',''); wakeVideo.setAttribute('loop','');
+  wakeVideo.style.cssText='position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;top:-1px;left:-1px;z-index:-1';
+  var src=document.createElement('source');
+  src.src='data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1wNDEAAAAIZnJlZQAAA';
+  src.type='video/mp4';
+  wakeVideo.appendChild(src);
+  document.body.appendChild(wakeVideo);
+  wakeVideo.play().catch(function(){});
+}
+function releaseWakeLock() {
+  if (wakeLock) { wakeLock.release().catch(function(){}); wakeLock=null; }
+  if (wakeVideo) { wakeVideo.pause(); wakeVideo.remove(); wakeVideo=null; }
+}
+
+// ── STATS PAGE ──
+function showPage(page) {
+  var home=document.getElementById('homePage');
+  var stats=document.getElementById('statsPage');
+  var nh=document.getElementById('navHome'),ns=document.getElementById('navStats');
+  if (page==='home') {
+    home.style.display=''; stats.classList.remove('show');
+    nh.classList.add('active'); ns.classList.remove('active');
+  } else {
+    home.style.display='none'; stats.classList.add('show');
+    nh.classList.remove('active'); ns.classList.add('active');
+    renderStats();
+  }
+}
+function renderStats() {
+  var el=document.getElementById('statsPage');
+  // PR / 1RM
+  var prs=[];
+  Object.values(PROGRAMS).forEach(function(prog){
+    prog.exercises.concat(prog.core).forEach(function(ex){
+      var pr=getPR(ex.name);
+      if (pr) prs.push({name:ex.name,kg:pr.kg,rip:pr.rip,orm:Math.round(pr.kg*(1+pr.rip/30)*10)/10,date:pr.date});
+    });
+  });
+  prs.sort(function(a,b){return b.orm-a.orm;});
+
+  // Volume
+  var muscleMap={'Panca Piana con bilanciere':'Petto','Panca Inclinata con manubri':'Petto','Cavi — Chest Fly':'Petto','Military Press con manubri':'Spalle','Alzate laterali con manubri':'Spalle','Alzate posteriori (Rear delt fly)':'Spalle','Tricipiti ai cavi (pushdown)':'Tricipiti','Lat Machine (presa larga)':'Dorsali','Rematore con bilanciere':'Dorsali','Pull-over con manubrio':'Dorsali','Curl bilanciere EZ':'Bicipiti','Curl a martello con manubri':'Bicipiti','Leg Press':'Gambe','Goblet Squat con manubrio':'Gambe','Romanian Deadlift con bilanciere':'Gambe','Affondi bulgari con manubri':'Gambe'};
+  var volColors={'Petto':'#ff3b30','Spalle':'#ff9500','Tricipiti':'#ff2d55','Dorsali':'#007aff','Bicipiti':'#5856d6','Gambe':'#34c759','Core':'#af52de'};
+  var vol={};
+  for (var w=0;w<WEEKS;w++) for (var d=0;d<3;d++) {
+    var prog=PROGRAMS[WEEK_PATTERNS[w][d]];
+    prog.exercises.forEach(function(ex,ei){
+      var m=muscleMap[ex.name]; if(!m) return;
+      for(var s=0;s<ex.sets;s++) if(state[ek(w,d,'e',ei,s)]==='1'){vol[m]=(vol[m]||0)+1;}
+    });
+    prog.core.forEach(function(ex,ci){
+      for(var s=0;s<ex.sets;s++) if(state[ek(w,d,'c',ci,s)]==='1'){vol['Core']=(vol['Core']||0)+1;}
+    });
+  }
+  var maxVol=Math.max.apply(null,Object.values(vol).concat([1]));
+
+  // Peso
+  var weights=JSON.parse(localStorage.getItem('weights')||'[]');
+  var last5=weights.slice(-5).reverse();
+  var weightHTML=weights.length===0?'<div style="font-size:12px;color:var(--muted)">Nessun dato ancora</div>':
+    '<div style="display:flex;align-items:baseline;gap:8px;margin-bottom:8px"><span style="font-family:DM Mono,monospace;font-size:28px;font-weight:700;color:var(--text)">'+weights[weights.length-1].kg+'</span><span style="font-size:14px;color:var(--muted)">kg</span>'+(weights.length>1?'<span style="font-size:12px;color:'+(weights[weights.length-1].kg>weights[0].kg?'#ff3b30':'#34c759')+'">'+((weights[weights.length-1].kg-weights[0].kg)>0?'+':'')+(weights[weights.length-1].kg-weights[0].kg).toFixed(1)+'kg</span>':'')+'</div>'
+    +'<div style="font-size:11px;color:var(--muted)">'+last5.map(function(h){return h.date+': '+h.kg+'kg';}).join(' · ')+'</div>';
+
+  el.innerHTML='<div class="section"><div class="section-title">Peso corporeo</div>'
+    +'<div class="weight-card"><div class="weight-row">'
+      +'<input class="weight-inp" type="number" inputmode="decimal" placeholder="75.0" id="wInp" step="0.1">'
+      +'<span class="weight-unit">kg</span>'
+      +'<button class="weight-save" onclick="saveWeight()">Salva</button>'
+    +'</div><div class="weight-hist" id="wHist">'+weightHTML+'</div></div></div>'
+
+    +'<div class="section"><div class="section-title">Massimali stimati (1RM)</div>'
+    +'<div class="orm-grid">'+(prs.length?prs.map(function(p){return '<div class="orm-card"><div class="orm-name">'+p.name.split(' ').slice(0,3).join(' ')+'</div><div class="orm-val">'+p.orm+'kg</div><div class="orm-sub">'+p.kg+'kg × '+p.rip+' rip · '+p.date+'</div></div>';}).join(''):'<div style="font-size:13px;color:var(--muted);padding:8px;grid-column:1/-1">Inizia a loggare i pesi!</div>')+'</div></div>'
+
+    +'<div class="section"><div class="section-title">Volume mensile</div>'
+    +(Object.keys(vol).length?Object.entries(vol).sort(function(a,b){return b[1]-a[1];}).map(function(e){return '<div class="vol-row"><span class="vol-label">'+e[0]+'</span><div class="vol-bg"><div class="vol-fill" style="width:'+Math.round(e[1]/maxVol*100)+'%;background:'+(volColors[e[0]]||'#888')+'"></div></div><span class="vol-count">'+e[1]+'</span></div>';}).join(''):'<div style="font-size:13px;color:var(--muted);padding:8px">Completa sessioni per vedere il volume</div>')+'</div>'
+
+    +'<div class="section"><div class="section-title">Dati & Backup</div>'
+    +'<div class="backup-row"><button class="bk-btn primary" onclick="backupData()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>Salva backup</button>'
+    +'<button class="bk-btn" onclick="restoreData()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>Ripristina</button></div>'
+    +'<p class="bk-note">Tieni il backup su iCloud o Google Drive per non perdere i progressi se cambi telefono.</p>'
+    +'<button class="exp-btn" onclick="exportCSV()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>Esporta in CSV (Excel)</button></div>';
+}
+
+function saveWeight() {
+  var v=parseFloat(document.getElementById('wInp').value);
+  if (isNaN(v)||v<30||v>250) return;
+  var w=JSON.parse(localStorage.getItem('weights')||'[]');
+  w.push({kg:v,date:new Date().toLocaleDateString('it-IT')});
+  localStorage.setItem('weights',JSON.stringify(w));
+  document.getElementById('wInp').value='';
+  renderStats();
+  showToast('💪 Peso salvato!');
+}
+
+// ── BACKUP ──
+function backupData() {
+  var data={v:2,date:new Date().toISOString(),state:state,weights:JSON.parse(localStorage.getItem('weights')||'[]'),streak:{last:localStorage.getItem('streak_last'),cnt:localStorage.getItem('streak_cnt')},prs:{}};
+  Object.values(PROGRAMS).forEach(function(p){p.exercises.concat(p.core).forEach(function(ex){var pr=getPR(ex.name);if(pr)data.prs[ex.name]=pr;});});
+  var blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  var url=URL.createObjectURL(blob);
+  var a=document.createElement('a');
+  a.href=url; a.download='scheda_ppl_'+new Date().toLocaleDateString('it-IT').replace(/\//g,'-')+'.json'; a.click();
+  URL.revokeObjectURL(url);
+  showToast('💾 Backup salvato!');
+}
+function restoreData() {
+  var inp=document.createElement('input'); inp.type='file'; inp.accept='.json';
+  inp.onchange=function(e){
+    var f=e.target.files[0]; if(!f) return;
+    var r=new FileReader();
+    r.onload=function(ev){
+      try {
+        var d=JSON.parse(ev.target.result);
+        if (!d.state) throw new Error();
+        state=d.state; save();
+        if (d.weights) localStorage.setItem('weights',JSON.stringify(d.weights));
+        if (d.streak) { if(d.streak.last)localStorage.setItem('streak_last',d.streak.last); if(d.streak.cnt)localStorage.setItem('streak_cnt',d.streak.cnt); }
+        if (d.prs) Object.entries(d.prs).forEach(function(e){setPR(e[0],e[1].kg,e[1].rip);});
+        renderWeek(); showToast('✅ Dati ripristinati!');
+      } catch(err) { showToast('❌ File non valido'); }
+    };
+    r.readAsText(f);
+  };
+  inp.click();
+}
+function exportCSV() {
+  var rows=['Settimana,Giorno,Esercizio,Serie,Kg,Rip,RPE'];
+  for (var w=0;w<WEEKS;w++) for (var d=0;d<3;d++) {
+    var prog=PROGRAMS[WEEK_PATTERNS[w][d]];
+    prog.exercises.concat(prog.core).forEach(function(ex,ei){
+      var t=ei<prog.exercises.length?'e':'c';
+      var ri=ei<prog.exercises.length?ei:ei-prog.exercises.length;
+      for (var s=0;s<ex.sets;s++) {
+        var kg=state[lk(w,d,t,ri,s,'kg')]||'';
+        var rp=state[lk(w,d,t,ri,s,'rip')]||'';
+        var rpe=state[lk(w,d,t,ri,s,'rpe')]||'';
+        if (kg||rp) rows.push((w+1)+','+['Lun','Mer','Ven'][d]+',"'+ex.name+'",'+( s+1)+','+kg+','+rp+','+rpe);
+      }
+    });
+  }
+  var blob=new Blob([rows.join('\n')],{type:'text/csv;charset=utf-8;'});
+  var url=URL.createObjectURL(blob);
+  var a=document.createElement('a'); a.href=url; a.download='scheda_ppl.csv'; a.click();
+  URL.revokeObjectURL(url);
+}
+
+// ── OGGI ──
+function goToToday() {
+  var dayMap={1:0,3:1,5:2};
+  var idx=dayMap[new Date().getDay()];
+  if (idx!==undefined) {
+    setTimeout(function(){
+      var card=document.getElementById('card-'+currentWeek+'-'+idx);
+      if (card&&!card.classList.contains('open')) {
+        card.classList.add('open');
+        card.scrollIntoView({behavior:'smooth',block:'start'});
+        card.style.boxShadow='0 0 0 2px var(--accent)';
+        setTimeout(function(){card.style.boxShadow='';},1200);
+      }
+    },400);
+  }
+}
+
+// ── PWA BANNER ──
+(function(){
+  var isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent);
+  var isStandalone=window.navigator.standalone===true;
+  var dismissed=localStorage.getItem('pwa-dismissed');
+  if (isIOS&&!isStandalone&&!dismissed) {
+    setTimeout(function(){
+      var b=document.createElement('div');
+      b.style.cssText='position:fixed;bottom:0;left:0;right:0;z-index:300;background:var(--bg);border-top:.5px solid var(--border);padding:14px 16px 30px;display:flex;align-items:center;gap:12px;box-shadow:0 -4px 20px rgba(0,0,0,.08)';
+      b.innerHTML='<div style="width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#ff3b30,#ff9500);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0">💪</div>'
+        +'<div style="flex:1;min-width:0"><div style="font-size:14px;font-weight:700;color:var(--text);margin-bottom:3px">Aggiungi alla Home</div><div style="font-size:12px;color:var(--muted);line-height:1.4">Tocca <strong>Condividi ↑</strong> poi <strong>"Aggiungi a schermata Home"</strong></div></div>'
+        +'<button onclick="this.parentElement.remove();localStorage.setItem(\'pwa-dismissed\',\'1\')" style="background:var(--bg3);border:.5px solid var(--border);border-radius:50%;color:var(--muted);font-size:14px;width:32px;height:32px;cursor:pointer;display:flex;align-items:center;justify-content:center">✕</button>';
+      document.body.appendChild(b);
+    },2000);
+  }
+})();
+
+// ── INIT ──
+renderWeekNav();
+renderWeek();
+goToToday();
+
+</script>
+</body>
+</html>
