@@ -245,6 +245,45 @@ body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); 
 #summary-modal > div { animation:fadeUp .3s cubic-bezier(.4,0,.2,1); }
 
 ::-webkit-scrollbar { width:0; }
+
+/* ── CRONOMETRO MANUALE ── */
+.stopwatch-bar{display:flex;align-items:center;gap:10px;padding:10px 16px;background:var(--bg2);border-bottom:.5px solid var(--border)}
+.sw-display{font-family:'DM Mono',monospace;font-size:28px;font-weight:700;color:var(--text);letter-spacing:-1px;flex:1;line-height:1}
+.sw-display.running{color:var(--accent)}
+.sw-btn{background:var(--accent);color:#fff;border:none;border-radius:12px;font-family:'Inter',sans-serif;font-size:13px;font-weight:600;padding:10px 18px;cursor:pointer;transition:all .18s;flex-shrink:0}
+.sw-btn:active{transform:scale(.94)}
+.sw-btn.stop{background:var(--bg3);color:var(--muted);border:.5px solid var(--border2)}
+.sw-reset{background:none;border:none;color:var(--muted);font-size:11px;font-weight:500;cursor:pointer;font-family:'Inter',sans-serif;padding:4px 8px;border-radius:8px;flex-shrink:0}
+.sw-reset:active{background:var(--bg3)}
+/* ── TIMER A BARRA ── */
+.timer-ov{position:fixed;bottom:0;left:0;right:0;background:var(--bg);border-top:.5px solid var(--border);padding:16px 20px 32px;display:none;z-index:200;flex-direction:column;gap:10px;box-shadow:0 -4px 20px rgba(0,0,0,.08)}
+.timer-ov.show{display:flex}
+.timer-top-row{display:flex;align-items:center;gap:12px}
+.timer-big{font-family:'DM Mono',monospace;font-size:42px;font-weight:700;color:var(--text);line-height:1;letter-spacing:-2px;flex:1}
+.timer-sub{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:2px}
+.timer-skip-btn{background:var(--bg3);border:.5px solid var(--border2);border-radius:12px;color:var(--muted);font-family:'Inter',sans-serif;font-size:13px;font-weight:500;padding:10px 18px;cursor:pointer;transition:all .15s;flex-shrink:0}
+.timer-skip-btn:active{background:var(--border2);transform:scale(.96)}
+.timer-bar-track{width:100%;height:10px;background:var(--bg3);border-radius:6px;overflow:hidden}
+.timer-bar-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--green),var(--accent));transition:width 1s linear,background .5s}
+.timer-bar-fill.orange{background:linear-gradient(90deg,#ff9500,var(--accent))}
+.timer-bar-fill.red{background:var(--accent);animation:pulse .6s ease-in-out infinite}
+/* ── ESERCIZIO CUSTOM ── */
+.custom-ex-wrap{margin:0 16px 16px;border:.5px solid var(--border2);border-radius:14px;overflow:hidden;background:var(--card);box-shadow:var(--shadow-sm)}
+.custom-ex-header{display:flex;align-items:center;gap:10px;padding:13px 15px;cursor:pointer;user-select:none;background:var(--bg3)}
+.custom-ex-title{font-size:13px;font-weight:600;color:var(--muted);flex:1}
+.custom-ex-add-btn{background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:11px;font-weight:600;padding:5px 12px;cursor:pointer;font-family:'Inter',sans-serif;flex-shrink:0;transition:all .15s}
+.custom-ex-add-btn:active{transform:scale(.94)}
+.custom-ex-list{display:none}
+.custom-ex-list.open{display:block}
+.custom-ex-item{padding:13px 15px;border-top:.5px solid var(--border);display:flex;flex-direction:column;gap:10px}
+.custom-ex-row{display:flex;gap:8px;align-items:center}
+.custom-ex-input{background:var(--bg3);border:.5px solid var(--border2);border-radius:8px;color:var(--text);font-family:'Inter',sans-serif;font-size:13px;padding:8px 10px;outline:none;transition:border-color .15s;flex:1}
+.custom-ex-input:focus{border-color:var(--accent)}
+.custom-ex-input::placeholder{color:var(--muted);opacity:.6}
+.custom-ex-input.small{width:64px;flex:none;text-align:center;font-family:'DM Mono',monospace;-webkit-appearance:none}
+.custom-ex-label{font-size:11px;color:var(--muted);font-weight:500;flex-shrink:0}
+.custom-ex-delete{background:none;border:none;color:var(--muted);font-size:16px;cursor:pointer;padding:4px;flex-shrink:0}
+
 </style>
 <script>
 if("serviceWorker"in navigator){
@@ -292,17 +331,16 @@ if("serviceWorker"in navigator){
 </nav>
 
 <div class="timer-ov" id="timerOv">
-  <div class="timer-ring-wrap">
-    <svg class="timer-ring-svg" viewBox="0 0 130 130">
-      <circle class="ring-bg" cx="65" cy="65" r="56"/>
-      <circle class="ring-fill green" id="timerRing" cx="65" cy="65" r="56" stroke-dasharray="352" stroke-dashoffset="0"/>
-    </svg>
-    <div class="timer-center">
+  <div class="timer-top-row">
+    <div>
       <div class="timer-big" id="timerVal">60</div>
-      <div class="timer-sub">recupero</div>
+      <div class="timer-sub">Recupero in corso</div>
     </div>
+    <button class="timer-skip-btn" onclick="skipTimer()">Salta ›</button>
   </div>
-  <button class="skip-btn" onclick="skipTimer()">Salta ›</button>
+  <div class="timer-bar-track">
+    <div class="timer-bar-fill" id="timerBarFill" style="width:100%"></div>
+  </div>
 </div>
 
 <script id="programsScript">
@@ -503,7 +541,7 @@ const CIRC = 2 * Math.PI * 56;
 var state = {};
 try { state = JSON.parse(localStorage.getItem('ppl_v6') || '{}'); } catch(e) {}
 var currentWeek = parseInt(localStorage.getItem('ppl_w6') || '0');
-var timerInt = null, timerTotal = 0, timerLeft = 0;
+var timerInt = null, timerTotal = 0, timerLeft = 0, timerStartTS = 0;
 var sessionTimers = {};
 var wakeLock = null, wakeVideo = null;
 
@@ -763,6 +801,7 @@ function buildCard(w,d,prog,isDone) {
       +'<span style="flex:1">Tempo sessione</span>'
       +'<span style="font-family:DM Mono,monospace;font-size:13px;font-weight:600;color:var(--accent)" id="stimer-'+w+'-'+d+'">'+fmtTime(getSElapsed(w,d))+'</span>'
     +'</div>'
+    +buildStopwatch(w,d)
     +'<div class="session-note-wrap">'
       +'<div class="note-lbl">📝 Note sessione</div>'
       +'<textarea class="note-input" placeholder="Come ti senti? Qualcosa da ricordare…" onchange="state[\'note_'+w+'_'+d+'\']=this.value;save()" oninput="this.style.height=\'auto\';this.style.height=this.scrollHeight+\'px\'">'+(state['note_'+w+'_'+d]||'')+'</textarea>'
@@ -774,6 +813,7 @@ function buildCard(w,d,prog,isDone) {
       +'<div class="ex-body"><div class="ex-name-row"><span class="ex-name">HIIT Finale</span></div>'
       +'<div class="ex-pills"><span class="pill">Alta intensità</span><span class="pill">~6 min</span></div></div></div>'
       +'<div class="hiit-block"><strong>Come eseguire:</strong> '+prog.hiit+'</div></div>'
+    +buildCustomSection(w,d)
     +'<button class="done-btn '+(isDone?'did':'todo')+'" onclick="completeSession('+w+','+d+')">'+( isDone?'✓ Sessione completata':'Segna come completata')+'</button>'
   +'</div>';
   return card;
@@ -1041,28 +1081,43 @@ function stopSTimer(w,d) {
 // ── TIMER RECUPERO ──
 function startTimer(sec) {
   stopTimer();
-  timerTotal=sec; timerLeft=sec;
-  var ring=document.getElementById('timerRing');
-  if (ring) { ring.style.transition='none'; ring.style.strokeDashoffset='0'; ring.className='ring-fill green'; requestAnimationFrame(function(){ring.style.transition='';});}
+  timerTotal = sec;
+  timerLeft = sec;
+  timerStartTS = Date.now(); // timestamp di inizio per calcolo background
+  var fill = document.getElementById('timerBarFill');
+  if (fill) {
+    fill.style.transition = 'none';
+    fill.style.width = '100%';
+    fill.className = 'timer-bar-fill';
+    requestAnimationFrame(function(){ fill.style.transition = 'width 1s linear, background .5s'; });
+  }
   document.getElementById('timerOv').classList.add('show');
   updateTimerUI();
-  timerInt=setInterval(function(){timerLeft--;updateTimerUI();if(timerLeft<=0)stopTimer();},1000);
+  timerInt = setInterval(function(){
+    // Calcola tempo reale (funziona anche se l'app va in background)
+    var elapsed = Math.round((Date.now() - timerStartTS) / 1000);
+    timerLeft = Math.max(0, timerTotal - elapsed);
+    updateTimerUI();
+    if (timerLeft <= 0) stopTimer();
+  }, 500); // controlla ogni 0.5s per precisione
 }
 function updateTimerUI() {
-  document.getElementById('timerVal').textContent=timerLeft;
-  var ring=document.getElementById('timerRing');
-  if (ring&&timerTotal>0) {
-    var pct=timerLeft/timerTotal;
-    ring.style.strokeDashoffset=CIRC*(1-pct);
-    ring.classList.remove('green','orange','red');
-    ring.classList.add(pct>0.5?'green':pct>0.2?'orange':'red');
-    if (timerLeft===3&&navigator.vibrate) navigator.vibrate([100,50,100]);
-    if (timerLeft===0&&navigator.vibrate) navigator.vibrate([100,80,100,80,300]);
+  var el = document.getElementById('timerVal');
+  if (el) el.textContent = timerLeft;
+  var fill = document.getElementById('timerBarFill');
+  if (fill && timerTotal > 0) {
+    var pct = timerLeft / timerTotal;
+    fill.style.width = Math.round(pct * 100) + '%';
+    fill.classList.remove('orange','red');
+    if (pct <= 0.2) fill.classList.add('red');
+    else if (pct <= 0.5) fill.classList.add('orange');
+    if (timerLeft === 3 && navigator.vibrate) navigator.vibrate([100,50,100]);
+    if (timerLeft === 0 && navigator.vibrate) navigator.vibrate([100,80,100,80,300]);
   }
 }
-function skipTimer(){stopTimer();}
-function stopTimer(){
-  if(timerInt){clearInterval(timerInt);timerInt=null;}
+function skipTimer(){ stopTimer(); }
+function stopTimer() {
+  if (timerInt) { clearInterval(timerInt); timerInt = null; }
   document.getElementById('timerOv').classList.remove('show');
 }
 
@@ -1256,6 +1311,174 @@ function goToToday() {
 })();
 
 // ── INIT ──
+
+/* ── CRONOMETRO MANUALE ── */
+var swRunning = false, swStartTS = 0, swElapsed = 0, swInt = null;
+
+function swTick() {
+  var total = swElapsed + Math.floor((Date.now() - swStartTS) / 1000);
+  document.querySelectorAll('.sw-display').forEach(function(el) {
+    el.textContent = fmtTime(total);
+  });
+}
+
+function swStart(cardKey) {
+  if (swRunning) return;
+  swRunning = true;
+  swStartTS = Date.now();
+  swInt = setInterval(swTick, 500);
+  // Aggiorna bottoni
+  var startBtn = document.getElementById('sw-start-'+cardKey);
+  var stopBtn  = document.getElementById('sw-stop-'+cardKey);
+  var display  = document.getElementById('sw-disp-'+cardKey);
+  if (startBtn) startBtn.style.display = 'none';
+  if (stopBtn)  stopBtn.style.display  = '';
+  if (display)  display.classList.add('running');
+}
+
+function swStop(cardKey) {
+  if (!swRunning) return;
+  swRunning = false;
+  swElapsed += Math.floor((Date.now() - swStartTS) / 1000);
+  clearInterval(swInt); swInt = null;
+  var startBtn = document.getElementById('sw-start-'+cardKey);
+  var stopBtn  = document.getElementById('sw-stop-'+cardKey);
+  var display  = document.getElementById('sw-disp-'+cardKey);
+  if (startBtn) startBtn.style.display = '';
+  if (stopBtn)  stopBtn.style.display  = 'none';
+  if (display)  display.classList.remove('running');
+}
+
+function swReset(cardKey) {
+  swStop(cardKey);
+  swElapsed = 0;
+  document.querySelectorAll('.sw-display').forEach(function(el) {
+    el.textContent = '00:00';
+  });
+}
+
+function buildStopwatch(w, d) {
+  var key = w+'-'+d;
+  return '<div class="stopwatch-bar" data-swkey="'+key+'">'
+    + '<div class="sw-display" id="sw-disp-'+key+'">00:00</div>'
+    + '<button class="sw-btn" id="sw-start-'+key+'" onclick="swStart(this.closest(\'[data-swkey]\').dataset.swkey)">▶ Avvia</button>'
+    + '<button class="sw-btn stop" id="sw-stop-'+key+'" onclick="swStop(this.closest(\'[data-swkey]\').dataset.swkey)" style="display:none">⏸ Pausa</button>'
+    + '<button class="sw-reset" onclick="swReset(this.closest(\'[data-swkey]\').dataset.swkey)">Reset</button>'
+    + '</div>';
+}
+
+/* ── ESERCIZIO CUSTOM ── */
+function buildCustomSection(w, d) {
+  var key = w+'-'+d;
+  var customs = JSON.parse(localStorage.getItem('custom_'+key) || '[]');
+  var itemsHtml = customs.map(function(ex, i) {
+    return buildCustomItem(w, d, i, ex);
+  }).join('');
+  var listId = 'cl-'+key;
+  var isOpen = customs.length > 0;
+  return '<div class="custom-ex-wrap">'
+    + '<div class="custom-ex-header" data-listid="'+listId+'" onclick="toggleCustomList(this.dataset.listid)">'
+      + '<span class="custom-ex-title">➕ Esercizi aggiuntivi'+(customs.length>0?' ('+customs.length+')':'')+'</span>'
+      + '<button class="custom-ex-add-btn" data-w="'+w+'" data-d="'+d+'" onclick="event.stopPropagation();addCustomEx(parseInt(this.dataset.w),parseInt(this.dataset.d))">+ Aggiungi</button>'
+    + '</div>'
+    + '<div class="custom-ex-list'+(isOpen?' open':'')+'" id="'+listId+'">'
+      + (itemsHtml || '<div style="padding:14px 15px;font-size:12px;color:var(--muted);text-align:center">Nessun esercizio — tocca + Aggiungi</div>')
+    + '</div>'
+  + '</div>';
+}
+
+function buildCustomItem(w, d, i, ex) {
+  var key = w+'-'+d;
+  var sbs = '';
+  var sets = ex.sets || 3;
+  for (var s=0; s<sets; s++) {
+    var done = (ex.log && ex.log[s] && ex.log[s].done) ? ' done' : '';
+    sbs += '<button class="sb'+done+'" onclick="toggleCustomSerie('+w+','+d+','+i+','+s+')" id="csb-'+key+'-'+i+'-'+s+'">'+(s+1)+'</button>';
+  }
+  var restBtn = ex.rest && ex.rest>0 ? '<button class="rest-btn" onclick="startTimer('+ex.rest+')">⏱ '+ex.rest+'s</button>' : '';
+  return '<div class="custom-ex-item" id="citem-'+key+'-'+i+'">'
+    + '<div class="custom-ex-row">'
+      + '<input class="custom-ex-input" placeholder="Nome esercizio" value="'+(ex.name||'')+'" onchange="saveCustomField('+w+','+d+','+i+','name',this.value)">'
+      + '<button class="custom-ex-delete" onclick="deleteCustomEx('+w+','+d+','+i+')" title="Elimina">🗑</button>'
+    + '</div>'
+    + '<div class="custom-ex-row">'
+      + '<span class="custom-ex-label">Serie</span>'
+      + '<input class="custom-ex-input small" type="number" inputmode="numeric" min="1" max="10" value="'+(ex.sets||3)+'" onchange="saveCustomField('+w+','+d+','+i+','sets',parseInt(this.value)||3);refreshCustomItem('+w+','+d+','+i+')">'
+      + '<span class="custom-ex-label">× Rip.</span>'
+      + '<input class="custom-ex-input small" type="number" inputmode="numeric" min="1" max="30" value="'+(ex.reps||10)+'" onchange="saveCustomField('+w+','+d+','+i+','reps',parseInt(this.value)||10)">'
+      + '<span class="custom-ex-label">Rec.</span>'
+      + '<input class="custom-ex-input small" type="number" inputmode="numeric" min="0" max="300" value="'+(ex.rest||60)+'" onchange="saveCustomField('+w+','+d+','+i+','rest',parseInt(this.value)||60)">s'
+    + '</div>'
+    + '<div class="custom-series-row">'+sbs+restBtn+'</div>'
+  + '</div>';
+}
+
+function toggleCustomList(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.toggle('open');
+}
+
+function addCustomEx(w, d) {
+  var key = w+'-'+d;
+  var customs = JSON.parse(localStorage.getItem('custom_'+key) || '[]');
+  customs.push({ name:'', sets:3, reps:10, rest:60, log:[] });
+  localStorage.setItem('custom_'+key, JSON.stringify(customs));
+  rebuildCustomSection(w, d);
+  // Apri la lista
+  var list = document.getElementById('cl-'+key);
+  if (list) list.classList.add('open');
+}
+
+function deleteCustomEx(w, d, i) {
+  var key = w+'-'+d;
+  var customs = JSON.parse(localStorage.getItem('custom_'+key) || '[]');
+  customs.splice(i, 1);
+  localStorage.setItem('custom_'+key, JSON.stringify(customs));
+  rebuildCustomSection(w, d);
+}
+
+function saveCustomField(w, d, i, field, val) {
+  var key = w+'-'+d;
+  var customs = JSON.parse(localStorage.getItem('custom_'+key) || '[]');
+  if (!customs[i]) return;
+  customs[i][field] = val;
+  localStorage.setItem('custom_'+key, JSON.stringify(customs));
+}
+
+function toggleCustomSerie(w, d, i, s) {
+  var key = w+'-'+d;
+  var customs = JSON.parse(localStorage.getItem('custom_'+key) || '[]');
+  if (!customs[i]) return;
+  if (!customs[i].log) customs[i].log = [];
+  if (!customs[i].log[s]) customs[i].log[s] = {};
+  customs[i].log[s].done = !customs[i].log[s].done;
+  localStorage.setItem('custom_'+key, JSON.stringify(customs));
+  var btn = document.getElementById('csb-'+key+'-'+i+'-'+s);
+  if (btn) {
+    btn.classList.toggle('done', customs[i].log[s].done);
+    btn.classList.add('pop');
+    setTimeout(function(){ btn.classList.remove('pop'); }, 400);
+  }
+  // Avvia timer se configurato
+  var rest = customs[i].rest || 0;
+  if (customs[i].log[s].done && rest > 0) startTimer(rest);
+}
+
+function refreshCustomItem(w, d, i) {
+  var key = w+'-'+d;
+  var customs = JSON.parse(localStorage.getItem('custom_'+key) || '[]');
+  var el = document.getElementById('citem-'+key+'-'+i);
+  if (el && customs[i]) {
+    el.outerHTML = buildCustomItem(w, d, i, customs[i]);
+  }
+}
+
+function rebuildCustomSection(w, d) {
+  var key = w+'-'+d;
+  var wrap = document.querySelector('#card-'+w+'-'+d+' .custom-ex-wrap');
+  if (wrap) wrap.outerHTML = buildCustomSection(w, d);
+}
+
 renderWeekNav();
 renderWeek();
 goToToday();
